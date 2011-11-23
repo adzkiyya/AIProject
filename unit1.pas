@@ -19,6 +19,7 @@ var
   Form1: TForm1; 
 
 implementation
+uses nnga;
 
 initialization
   {$I unit1.lrs}
