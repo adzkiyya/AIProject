@@ -1,6 +1,10 @@
 Database nya ada di DATABASE.sql
 Yang tidak ada datanya diisi NULL
 
-Setelah di fork, buka projectNNGA dengan lazarus
+Lakukan langkah-langkah berikut :
 
-Saat ini sudah pakai class.
+1. Fork repository ini menjadi repository Anda sendiri, buka projectNNGA.lpr dengan lazarus
+2. Clone ke local untuk diedit
+3. Editlah sesuka hati
+4. Commit dan push ke repository Anda sendiri
+5. Kirim pull request ke saya supaya bisa saya merge ke repository ini
