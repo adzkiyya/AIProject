@@ -68,7 +68,11 @@ end;
 function TNeuralNetwork.activate(input: real): real;
 begin
   //yang penting ada dulu, nanti dibenerin atau bikin class baru terus dioverride :D
+<<<<<<< HEAD
   activate = input;
+=======
+ // activate = input;
+>>>>>>> SonnyGosaria/SonnyAI_Project_v001
 end;
 
 procedure TNeuralNetwork.makeNeuralNetwork(inputNeuronValue : integer;
@@ -104,7 +108,11 @@ begin
      for j := 0 to length(self.weights[i]) do
      begin
        Randomize;
+<<<<<<< HEAD
        self.weights[i][j]:=random;
+=======
+       self.weights[i][j]:=random(3);
+>>>>>>> SonnyGosaria/SonnyAI_Project_v001
      end;
    end;
 end;
@@ -182,5 +190,13 @@ begin
 
 end;
 
-end.
+
+
+
+
+
+ end.
+
+
+
 
