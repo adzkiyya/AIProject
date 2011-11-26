@@ -5,19 +5,20 @@ unit nnga;
 interface
 
 uses
-  Classes, SysUtils, Math;
+  Classes, SysUtils;
 
 type
     TIntegerArray = array of integer;
+    TRealArray = array of real;
 
     { TNeuralNetwork }
 
     TNeuralNetwork = class
     private
       weights      : array of array of real; //0: input-hidden1, 1: hidden1-hidden2, n: output
-      inputNeuron  : integer; //count of input neuron  (automatically +1 for bias)
-      hiddenNeuron : TIntegerArray; //count of hidden neuron (automatically +1 for bias)
-      outputNeuron : integer; //count of output neuron (automatically +1 for bias)
+      inputNeuron  : integer; //count of input neuron  (bias not included)
+      hiddenNeuron : TIntegerArray; //count of hidden neuron (bias not included)
+      outputNeuron : integer; //count of output neuron (bias not included)
       neuronCount : array of integer; //would be calculated automatically in makeNeuralNetwork
 
       //get real index of weights
@@ -30,6 +31,7 @@ type
       //you can override this function for custom activation function
       function activate(input:real):real;
     public
+      procedure create();
       //generate random weights as parameter given
       procedure makeNeuralNetwork(inputNeuronValue : integer; hiddenNeuronValue : TIntegerArray; outputNeuronValue:integer);
       //forward to generate output
@@ -38,9 +40,22 @@ type
       procedure calculate_backprop(delta : array of real);
     end;
 
+    { TGeneticsAlgorithm }
+
+    TGeneticsAlgorithm = class
+    private
+      genes         : array of array of real; //the genes
+    protected
+    public
+      procedure mutation(var gene : TRealArray);
+      procedure crossover(var gene1, gene2 : TRealArray);
+      procedure reproduction(var gene: TRealArray);
+    end;
+
 
 implementation
 
+{ TNeuralNetwork }
 function TNeuralNetwork.getRealIndex(fromLayer, fromNeuron,
 toNeuron: integer): integer;
 var
@@ -68,11 +83,12 @@ end;
 function TNeuralNetwork.activate(input: real): real;
 begin
   //yang penting ada dulu, nanti dibenerin atau bikin class baru terus dioverride :D
-<<<<<<< HEAD
-  activate = input;
-=======
- // activate = input;
->>>>>>> SonnyGosaria/SonnyAI_Project_v001
+  activate := input;
+end;
+
+procedure TNeuralNetwork.create();
+begin
+  //constructor
 end;
 
 procedure TNeuralNetwork.makeNeuralNetwork(inputNeuronValue : integer;
@@ -108,11 +124,8 @@ begin
      for j := 0 to length(self.weights[i]) do
      begin
        Randomize;
-<<<<<<< HEAD
        self.weights[i][j]:=random;
-=======
        self.weights[i][j]:=random(3);
->>>>>>> SonnyGosaria/SonnyAI_Project_v001
      end;
    end;
 end;
@@ -145,7 +158,7 @@ begin
       //current = before's next
       for j := 0 to countNeuronOfCurrentLayer-1 do
       begin
-        if j = countOfNeuronValue-1 then  //this is bias
+        if j = countNeuronOfCurrentLayer-1 then  //this is bias
           currentNeuronValue[j] := 1
         else
           currentNeuronValue[j] := nextNeuronValue[j];
@@ -190,13 +203,23 @@ begin
 
 end;
 
+{ TGeneticsAlgorithm }
 
+procedure TGeneticsAlgorithm.mutation(var gene: TRealArray);
+begin
 
+end;
 
+procedure TGeneticsAlgorithm.crossover(var gene1, gene2: TRealArray);
+begin
 
+end;
 
- end.
+procedure TGeneticsAlgorithm.reproduction(var gene: TRealArray);
+begin
 
+end;
 
+end.
 
 

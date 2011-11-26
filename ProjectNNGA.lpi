@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="9"/>
+    <General>
+      <MainUnit Value="0"/>
+      <UseXPManifest Value="True"/>
+      <Icon Value="0"/>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <VersionInfo>
+      <Language Value=""/>
+      <CharSet Value=""/>
+    </VersionInfo>
+    <BuildModes Count="1">
+      <Item1 Name="default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <IgnoreBinaries Value="False"/>
+      <IncludeFileFilter Value="*.(pas|pp|inc|lfm|lpr|lrs|lpi|lpk|sh|xml)"/>
+      <ExcludeFileFilter Value="*.(bak|ppu|ppw|o|so);*~;backup"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+        <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="3">
+      <Item1>
+        <PackageName Value="FCL"/>
+        <MinVersion Major="1" Valid="True"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="SQLDBLaz"/>
+        <MinVersion Major="1" Release="1" Valid="True"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="LCL"/>
+      </Item3>
+    </RequiredPackages>
+    <Units Count="7">
+      <Unit0>
+        <Filename Value="ProjectNNGA.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ProjectNNGA"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="20"/>
+        <UsageCount Value="24"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="display.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="display"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="80"/>
+        <CursorPos X="19" Y="92"/>
+        <UsageCount Value="24"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="nnga.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="nnga"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="36"/>
+        <CursorPos X="22" Y="40"/>
+        <UsageCount Value="24"/>
+        <Loaded Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="/Vboxsvr/Downloads/adzkiyya-aiProject-f589f74/unit1.pas"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit1"/>
+        <TopLine Value="96"/>
+        <CursorPos X="40" Y="110"/>
+        <UsageCount Value="10"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="/Vboxsvr/Downloads/adzkiyya-aiProject-f589f74/unit2.pas"/>
+        <ComponentName Value="GrafikSistem"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit2"/>
+        <TopLine Value="8"/>
+        <CursorPos X="40" Y="6"/>
+        <UsageCount Value="10"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="/usr/share/fpcsrc/2.4.0/rtl/objpas/sysutils/datih.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="112"/>
+        <CursorPos X="13" Y="124"/>
+        <UsageCount Value="10"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="/usr/share/fpcsrc/2.4.0/rtl/objpas/sysutils/dati.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="56" Y="3"/>
+        <UsageCount Value="10"/>
+      </Unit6>
+    </Units>
+    <JumpHistory Count="15" HistoryIndex="14">
+      <Position1>
+        <Filename Value="display.pas"/>
+        <Caret Line="75" Column="32" TopLine="60"/>
+      </Position1>
+      <Position2>
+        <Filename Value="display.pas"/>
+        <Caret Line="74" Column="37" TopLine="62"/>
+      </Position2>
+      <Position3>
+        <Filename Value="display.pas"/>
+        <Caret Line="57" Column="28" TopLine="44"/>
+      </Position3>
+      <Position4>
+        <Filename Value="display.pas"/>
+        <Caret Line="84" Column="3" TopLine="74"/>
+      </Position4>
+      <Position5>
+        <Filename Value="display.pas"/>
+        <Caret Line="78" Column="26" TopLine="72"/>
+      </Position5>
+      <Position6>
+        <Filename Value="display.pas"/>
+        <Caret Line="49" Column="24" TopLine="41"/>
+      </Position6>
+      <Position7>
+        <Filename Value="display.pas"/>
+        <Caret Line="91" Column="28" TopLine="77"/>
+      </Position7>
+      <Position8>
+        <Filename Value="display.pas"/>
+        <Caret Line="88" Column="31" TopLine="71"/>
+      </Position8>
+      <Position9>
+        <Filename Value="display.pas"/>
+        <Caret Line="78" Column="20" TopLine="65"/>
+      </Position9>
+      <Position10>
+        <Filename Value="display.pas"/>
+        <Caret Line="72" Column="25" TopLine="64"/>
+      </Position10>
+      <Position11>
+        <Filename Value="display.pas"/>
+        <Caret Line="76" Column="18" TopLine="64"/>
+      </Position11>
+      <Position12>
+        <Filename Value="display.pas"/>
+        <Caret Line="77" Column="7" TopLine="64"/>
+      </Position12>
+      <Position13>
+        <Filename Value="display.pas"/>
+        <Caret Line="75" Column="54" TopLine="78"/>
+      </Position13>
+      <Position14>
+        <Filename Value="display.pas"/>
+        <Caret Line="90" Column="1" TopLine="78"/>
+      </Position14>
+      <Position15>
+        <Filename Value="display.pas"/>
+        <Caret Line="91" Column="12" TopLine="78"/>
+      </Position15>
+    </JumpHistory>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="9"/>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+    </SearchPaths>
+    <Parsing>
+      <SyntaxOptions>
+        <UseAnsiStrings Value="False"/>
+      </SyntaxOptions>
+    </Parsing>
+    <Linking>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+    <Other>
+      <CompilerPath Value="$(CompPath)"/>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="4">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+      <Item4>
+        <Name Value="EDatabaseError"/>
+      </Item4>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

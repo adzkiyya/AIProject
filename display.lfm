@@ -1,0 +1,400 @@
+object Form1: TForm1
+  Left = 312
+  Height = 539
+  Top = 150
+  Width = 905
+  Caption = 'Form1'
+  ClientHeight = 539
+  ClientWidth = 905
+  OnCloseQuery = FormCloseQuery
+  LCLVersion = '0.9.30'
+  object groupBox_training: TGroupBox
+    Left = 0
+    Height = 225
+    Top = 0
+    Width = 616
+    Align = alClient
+    Caption = 'Train / Test'
+    ClientHeight = 210
+    ClientWidth = 612
+    Enabled = False
+    TabOrder = 0
+    object LabelLearningRate: TLabel
+      Left = 14
+      Height = 14
+      Top = 131
+      Width = 77
+      Caption = 'Learning Rate'
+      ParentColor = False
+    end
+    object ProgressBar1: TProgressBar
+      Left = 0
+      Height = 20
+      Top = 0
+      Width = 612
+      Align = alTop
+      TabOrder = 0
+    end
+    object btnBackProp: TButton
+      Left = 14
+      Height = 37
+      Top = 35
+      Width = 160
+      Caption = 'Back Propagation'
+      TabOrder = 1
+    end
+    object btnGA: TButton
+      Left = 174
+      Height = 37
+      Top = 35
+      Width = 155
+      Caption = 'Genetics Algorithm'
+      TabOrder = 2
+    end
+    object chkTrain: TCheckBox
+      Left = 14
+      Height = 22
+      Top = 91
+      Width = 67
+      Caption = 'Training'
+      TabOrder = 3
+    end
+    object edtLearningRate: TFloatSpinEdit
+      Left = 117
+      Height = 23
+      Top = 131
+      Width = 121
+      Increment = 1
+      MaxValue = 1
+      MinValue = 0
+      TabOrder = 4
+      Value = 0.05
+    end
+    object dateEditFrom: TDateEdit
+      Left = 11
+      Height = 23
+      Top = 160
+      Width = 80
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      OKCaption = 'OK'
+      CancelCaption = 'Cancel'
+      DateOrder = doYMd
+      ButtonWidth = 23
+      CharCase = ecNormal
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D69E
+        72C4D3996EF4D19668FFCE9263FFCB8E5EFFC98A5BFFC78756FFC38452FFC384
+        52FFC38452FFC38452FFC38452FFC38452FFBB7742B0FFFFFF00FFFFFF00D7A1
+        75FFF8F2EDFFF7F0EAFFF6EDE6FFF4EAE2FFF3E7DEFFF1E4DBFFF0E2D8FFEAD6
+        C8FFF2E5DCFFFAF4F1FFF9F3F0FFFAF5F2FFC58A5DFDFFFFFF00FFFFFF00D9A4
+        7AFFF9F3EEFFEBD2BEFFFFFFFFFFEBD3BFFFFFFFFFFFEBD3C0FFFFFFFFFFEAC7
+        ADFFECD9CDFFF1E4DBFFF9F3F0FFF9F2EFFFC68C5FFFFFFFFF00FFFFFF00DDA8
+        7EFFF9F3EFFFEBD0BAFFEBD0BBFF75B57AFF75B57AFF75B57AFFEBD1BDFFEACD
+        B5FFFAF4F0FFEBD9CCFFF1E4DBFFFAF4F1FFC68A5CFFFFFFFF00FFFFFF00DFAA
+        82FFF9F3EFFFEACEB7FFFFFFFFFF75B57AFF94D49BFF74B579FFFFFFFFFFEACF
+        BAFFFBF6F2FFFAF3F0FFEBD8CBFFF2E6DDFFC88D5FFFFFFFFF00FFFFFF00E1AE
+        87FFFAF4F0FFEACBB2FFEACCB3FF75B57AFF74B579FF73B478FFEACEB7FF70B3
+        75FF6FB274FF6EB172FFE8C8AEFFEAD7C9FFC48654FFFFFFFF00FFFFFF00E3B1
+        8CFFFAF6F1FFEAC9AEFFFFFFFFFFEAC9B0FFFFFFFFFFE9CBB3FFFFFFFFFF6FB1
+        73FF8ED295FF6BAF6FFFFFFFFFFFF1E5DBFFC68655FFFFFFFF00FFFFFF00E5B4
+        8FFFFAF6F2FFE9C6AAFFE9C6ACFFEAC7ACFFE9C7ADFFE9C9AEFFE9C9B0FF6CB0
+        71FF6AAF6EFF68AD6DFFE8CCB5FFF2E7DEFFC88A59FFFFFFFF00FFFFFF00E7B7
+        94FFFBF7F4FFE9C3A6FFFFFFFFFFE8C4A9FFFFFFFFFFE9C6AAFFFFFFFFFFE8C7
+        ACFFFFFFFFFFE8C8B0FFFFFFFFFFF7F1EBFFCB8F5FFFFFFFFF00FFFFFF00E9BA
+        98FFFBF7F4FF65A4FFFF64A3FFFF62A2FFFF61A1FFFF5F9FFFFF5C9DFFFF5A9A
+        FFFF5798FFFF5495FFFF5294FFFFFBF7F4FFCE9364FFFFFFFF00FFFFFF00EBBD
+        9BFFFBF7F4FF64A4FFFF79BDFFFF75BBFFFF71B9FFFF6DB8FFFF68B3FFFF61B0
+        FFFF5AABFFFF54A7FFFF3B7DFFFFFBF7F4FFD1976AFFFFFFFF00FFFFFF00ECBF
+        9EFFFBF7F4FF65A4FFFF64A3FFFF60A0FFFF5D9EFFFF5899FFFF5496FFFF4D90
+        FFFF478BFFFF4284FFFF3D7FFFFFFBF7F4FFD49B6FFFFFFFFF00FFFFFF00EEC1
+        A1EBFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7
+        F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFD7A074F8FFFFFF00FFFFFF00EFC2
+        A37EEFC1A2E3EDC09FFFEBBE9DFFEBBC9AFFE9BA96FFE7B793FFE6B590FFE4B2
+        8CFFE2AF88FFE0AC84FFDDA980FFDCA57DFFDAA37ACAFFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+      }
+      NumGlyphs = 0
+      MaxLength = 10
+      TabOrder = 5
+    end
+    object dateEditTo: TDateEdit
+      Left = 134
+      Height = 23
+      Top = 160
+      Width = 80
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      OKCaption = 'OK'
+      CancelCaption = 'Cancel'
+      DateOrder = doYMd
+      ButtonWidth = 23
+      CharCase = ecNormal
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D69E
+        72C4D3996EF4D19668FFCE9263FFCB8E5EFFC98A5BFFC78756FFC38452FFC384
+        52FFC38452FFC38452FFC38452FFC38452FFBB7742B0FFFFFF00FFFFFF00D7A1
+        75FFF8F2EDFFF7F0EAFFF6EDE6FFF4EAE2FFF3E7DEFFF1E4DBFFF0E2D8FFEAD6
+        C8FFF2E5DCFFFAF4F1FFF9F3F0FFFAF5F2FFC58A5DFDFFFFFF00FFFFFF00D9A4
+        7AFFF9F3EEFFEBD2BEFFFFFFFFFFEBD3BFFFFFFFFFFFEBD3C0FFFFFFFFFFEAC7
+        ADFFECD9CDFFF1E4DBFFF9F3F0FFF9F2EFFFC68C5FFFFFFFFF00FFFFFF00DDA8
+        7EFFF9F3EFFFEBD0BAFFEBD0BBFF75B57AFF75B57AFF75B57AFFEBD1BDFFEACD
+        B5FFFAF4F0FFEBD9CCFFF1E4DBFFFAF4F1FFC68A5CFFFFFFFF00FFFFFF00DFAA
+        82FFF9F3EFFFEACEB7FFFFFFFFFF75B57AFF94D49BFF74B579FFFFFFFFFFEACF
+        BAFFFBF6F2FFFAF3F0FFEBD8CBFFF2E6DDFFC88D5FFFFFFFFF00FFFFFF00E1AE
+        87FFFAF4F0FFEACBB2FFEACCB3FF75B57AFF74B579FF73B478FFEACEB7FF70B3
+        75FF6FB274FF6EB172FFE8C8AEFFEAD7C9FFC48654FFFFFFFF00FFFFFF00E3B1
+        8CFFFAF6F1FFEAC9AEFFFFFFFFFFEAC9B0FFFFFFFFFFE9CBB3FFFFFFFFFF6FB1
+        73FF8ED295FF6BAF6FFFFFFFFFFFF1E5DBFFC68655FFFFFFFF00FFFFFF00E5B4
+        8FFFFAF6F2FFE9C6AAFFE9C6ACFFEAC7ACFFE9C7ADFFE9C9AEFFE9C9B0FF6CB0
+        71FF6AAF6EFF68AD6DFFE8CCB5FFF2E7DEFFC88A59FFFFFFFF00FFFFFF00E7B7
+        94FFFBF7F4FFE9C3A6FFFFFFFFFFE8C4A9FFFFFFFFFFE9C6AAFFFFFFFFFFE8C7
+        ACFFFFFFFFFFE8C8B0FFFFFFFFFFF7F1EBFFCB8F5FFFFFFFFF00FFFFFF00E9BA
+        98FFFBF7F4FF65A4FFFF64A3FFFF62A2FFFF61A1FFFF5F9FFFFF5C9DFFFF5A9A
+        FFFF5798FFFF5495FFFF5294FFFFFBF7F4FFCE9364FFFFFFFF00FFFFFF00EBBD
+        9BFFFBF7F4FF64A4FFFF79BDFFFF75BBFFFF71B9FFFF6DB8FFFF68B3FFFF61B0
+        FFFF5AABFFFF54A7FFFF3B7DFFFFFBF7F4FFD1976AFFFFFFFF00FFFFFF00ECBF
+        9EFFFBF7F4FF65A4FFFF64A3FFFF60A0FFFF5D9EFFFF5899FFFF5496FFFF4D90
+        FFFF478BFFFF4284FFFF3D7FFFFFFBF7F4FFD49B6FFFFFFFFF00FFFFFF00EEC1
+        A1EBFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7
+        F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFD7A074F8FFFFFF00FFFFFF00EFC2
+        A37EEFC1A2E3EDC09FFFEBBE9DFFEBBC9AFFE9BA96FFE7B793FFE6B590FFE4B2
+        8CFFE2AF88FFE0AC84FFDDA980FFDCA57DFFDAA37ACAFFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+      }
+      NumGlyphs = 0
+      MaxLength = 10
+      TabOrder = 6
+    end
+    object DBGrid1: TDBGrid
+      Left = 342
+      Height = 175
+      Top = 25
+      Width = 264
+      Color = clWindow
+      Columns = <>
+      DataSource = DataSource
+      ReadOnly = True
+      TabOrder = 7
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 314
+    Top = 225
+    Width = 905
+    Align = alBottom
+    ClientHeight = 314
+    ClientWidth = 905
+    TabOrder = 1
+    object GroupBox4: TGroupBox
+      Left = 1
+      Height = 312
+      Top = 1
+      Width = 727
+      Align = alClient
+      Caption = 'Weights'
+      ClientHeight = 297
+      ClientWidth = 723
+      Enabled = False
+      TabOrder = 0
+      object VijHidden: TStringGrid
+        Left = 0
+        Height = 297
+        Top = 0
+        Width = 723
+        Align = alClient
+        TabOrder = 0
+      end
+    end
+    object GroupBox5: TGroupBox
+      Left = 728
+      Height = 312
+      Top = 1
+      Width = 176
+      Align = alRight
+      Caption = 'Output'
+      ClientHeight = 297
+      ClientWidth = 172
+      TabOrder = 1
+      object YOutput: TStringGrid
+        Left = 0
+        Height = 297
+        Top = 0
+        Width = 172
+        Align = alClient
+        ColCount = 1
+        FixedCols = 0
+        TabOrder = 0
+      end
+    end
+  end
+  object GroupBox1: TGroupBox
+    Left = 616
+    Height = 225
+    Top = 0
+    Width = 289
+    Align = alRight
+    Caption = 'Database'
+    ClientHeight = 210
+    ClientWidth = 285
+    TabOrder = 2
+    object edt_hostName: TEdit
+      Left = 158
+      Height = 23
+      Top = 8
+      Width = 100
+      TabOrder = 0
+      Text = '127.0.0.1'
+    end
+    object edt_port: TEdit
+      Left = 158
+      Height = 23
+      Top = 39
+      Width = 100
+      TabOrder = 1
+      Text = '3306'
+    end
+    object edt_database: TEdit
+      Left = 158
+      Height = 23
+      Top = 71
+      Width = 100
+      TabOrder = 2
+      Text = 'bmg_bjm'
+    end
+    object edt_username: TEdit
+      Left = 158
+      Height = 23
+      Top = 104
+      Width = 100
+      TabOrder = 3
+      Text = 'root'
+    end
+    object edt_password: TEdit
+      Left = 158
+      Height = 23
+      Top = 140
+      Width = 100
+      TabOrder = 4
+    end
+    object btnConnect: TButton
+      Left = 158
+      Height = 25
+      Top = 176
+      Width = 99
+      Caption = 'Connect'
+      OnClick = btnConnectClick
+      TabOrder = 5
+    end
+  end
+  object Connection: TMySQL50Connection
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'bmg_bjm'
+    KeepConnection = False
+    Params.Strings = (
+      'Port=3306'
+    )
+    Password = 'root'
+    Transaction = transaction
+    UserName = 'root'
+    HostName = 'localhost'
+    left = 704
+    top = 40
+  end
+  object DataSource: TDatasource
+    DataSet = table_bmg_bjm
+    left = 704
+    top = 168
+  end
+  object table_bmg_bjm: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    Filtered = True
+    Database = Connection
+    Transaction = transaction
+    ReadOnly = False
+    SQL.Strings = (
+      'SELECT * FROM bmg_bjm;'
+    )
+    Params = <>
+    left = 704
+    top = 104
+    object table_bmg_bjmTanggal: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Tanggal'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      DisplayFormat = 'YYY-MM-DD'
+    end
+    object table_bmg_bjmSuhuMax: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SuhuMax'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = -1
+    end
+    object table_bmg_bjmSuhuMin: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SuhuMin'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = -1
+    end
+    object table_bmg_bjmSuhuAvg: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SuhuAvg'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = -1
+    end
+    object table_bmg_bjmKelembaban: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Kelembaban'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = -1
+    end
+  end
+  object transaction: TSQLTransaction
+    Active = False
+    Action = caNone
+    Database = Connection
+    left = 624
+    top = 104
+  end
+end

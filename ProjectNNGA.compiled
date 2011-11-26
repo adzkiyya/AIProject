@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <Compiler Value="/usr/bin/fpc" Date="1289511955"/>
+  <Params Value=" -MObjFPC -Scgi -O1 -gl -WG -vewnhi -l -Fu/usr/lib/lazarus/0.9.30/components/sqldb/lib/i386-linux/gtk2 -Fu/usr/lib/lazarus/0.9.30/components/synedit/units/i386-linux -Fu/usr/lib/lazarus/0.9.30/ideintf/units/i386-linux -Fu/usr/lib/lazarus/0.9.30/lcl/units/i386-linux -Fu/usr/lib/lazarus/0.9.30/lcl/units/i386-linux/gtk2 -Fu/usr/lib/lazarus/0.9.30/packager/units/i386-linux -Fu/home/gofrendi/Documents/S2/aiProject/ -Fu. -oProjectNNGA -dLCL -dLCLgtk2 ProjectNNGA.lpr"/>
+</CONFIG>
