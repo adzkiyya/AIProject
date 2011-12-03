@@ -61,6 +61,8 @@ type
     procedure GroupBox3Click(Sender: TObject);
   private
     { private declarations }
+    function fft(no:integer;value:Extended):Extended;
+    function dft(no:integer;value:Extended):Extended;
   public
     { public declarations }
   end; 
@@ -71,6 +73,40 @@ var
 implementation
 
 { TForm1 }
+function TForm1.fft(no:integer;value:Extended):Extended;
+var eHasil:Extended;
+begin
+  eHasil:=0.0;
+  case no of
+  0 :begin
+      if value>=10000 then eHasil:=0.9999;
+      if value<=-10000 then eHasil:=0.000000001
+      if (value>-10000) and (value<10000) then eHasil:=1/(1+exp(-value));
+  end;
+  1:begin
+      if value>=10000 then eHasil:=0.9999;
+      if value<=-10000 then eHasil:=-0.9999;
+      if (value>-10000) and (value<10000) then eHasil:=(2/1+exp(-1*value)))-1;
+  end;
+  end;
+      fft:=eHasil;
+end;
+function TForm1.dft(no:integer;value:Extended):Extended;
+var dummy,eHasil:Extended;
+begin
+      eHasil:=0.0;
+      case no of
+      0:begin
+          dummy:=fft(no,value);
+          eHasil:=(1-dummy)*dummy;
+        end;
+      1:begin
+            dummy:=fft(no,value);
+            eHasil:=0.5*(1+dummy)*(1-dummy);
+        end;
+      end;
+      dft:=eHasil;
+end;
 
 procedure TForm1.btnConnectClick(Sender: TObject);
 begin
