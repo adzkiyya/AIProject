@@ -18,10 +18,13 @@ type
     btnGA: TButton;
     btnConnect: TButton;
     chkTrain: TCheckBox;
+    ft: TComboBox;
     DataSource: TDatasource;
+    DateEdit1: TDateEdit;
     dateEditFrom: TDateEdit;
     dateEditTo: TDateEdit;
     DBGrid1: TDBGrid;
+    edSMomen: TEdit;
     edt_username: TEdit;
     edt_password: TEdit;
     edt_hostName: TEdit;
@@ -29,13 +32,22 @@ type
     edt_database: TEdit;
     edtLearningRate: TFloatSpinEdit;
     GroupBox1: TGroupBox;
-    groupBox_training: TGroupBox;
+    GroupBox2: TGroupBox;
+    GroupBox3: TGroupBox;
     GroupBox4: TGroupBox;
-    GroupBox5: TGroupBox;
+    groupBox_training: TGroupBox;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
     LabelLearningRate: TLabel;
     Connection: TMySQL50Connection;
     Panel1: TPanel;
     ProgressBar1: TProgressBar;
+    YOutput: TStringGrid;
+    VijHidden: TStringGrid;
+    WijHidden: TStringGrid;
+    target: TStringGrid;
     transaction: TSQLTransaction;
     table_bmg_bjm: TSQLQuery;
     table_bmg_bjmKelembaban: TFloatField;
@@ -43,11 +55,10 @@ type
     table_bmg_bjmSuhuMax: TFloatField;
     table_bmg_bjmSuhuMin: TFloatField;
     table_bmg_bjmTanggal: TDateField;
-    VijHidden: TStringGrid;
-    YOutput: TStringGrid;
     procedure btnConnectClick(Sender: TObject);
     procedure dateEditChange(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
+    procedure GroupBox3Click(Sender: TObject);
   private
     { private declarations }
   public
@@ -104,6 +115,11 @@ begin
   transaction.Active:=false;
   table_bmg_bjm.Active:=false;
   Connection.Connected:=false;
+end;
+
+procedure TForm1.GroupBox3Click(Sender: TObject);
+begin
+
 end;
 
 initialization
