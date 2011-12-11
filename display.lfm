@@ -1,302 +1,413 @@
 object Form1: TForm1
-  Left = 312
-  Height = 539
-  Top = 150
-  Width = 905
+  Left = 224
+  Height = 602
+  Top = 206
+  Width = 1009
   Caption = 'Form1'
-  ClientHeight = 539
-  ClientWidth = 905
-  OnCloseQuery = FormCloseQuery
+  ClientHeight = 602
+  ClientWidth = 1009
   LCLVersion = '0.9.30'
-  object groupBox_training: TGroupBox
-    Left = 0
-    Height = 225
-    Top = 0
-    Width = 616
-    Align = alClient
-    Caption = 'Train / Test'
-    ClientHeight = 207
-    ClientWidth = 612
-    Enabled = False
+  object GroupBox1: TGroupBox
+    Left = 11
+    Height = 245
+    Top = 11
+    Width = 253
+    Caption = 'Database'
+    ClientHeight = 227
+    ClientWidth = 249
     TabOrder = 0
-    object LabelLearningRate: TLabel
-      Left = 14
+    object Label1: TLabel
+      Left = 9
       Height = 14
-      Top = 121
-      Width = 68
-      Caption = 'Learning Rate'
+      Top = 13
+      Width = 49
+      Caption = 'Hostname'
       ParentColor = False
     end
-    object ProgressBar1: TProgressBar
-      Left = 0
-      Height = 20
-      Top = 0
-      Width = 612
-      Align = alTop
-      TabOrder = 0
-    end
-    object btnBackProp: TButton
-      Left = 6
-      Height = 37
-      Top = 25
-      Width = 160
-      Caption = 'Back Propagation'
-      TabOrder = 1
-    end
-    object btnGA: TButton
-      Left = 174
-      Height = 37
-      Top = 25
-      Width = 155
-      Caption = 'Genetics Algorithm'
-      TabOrder = 2
-    end
-    object chkTrain: TCheckBox
-      Left = 14
-      Height = 17
-      Top = 71
-      Width = 56
-      Caption = 'Training'
-      TabOrder = 3
-    end
-    object edtLearningRate: TFloatSpinEdit
-      Left = 102
-      Height = 21
-      Top = 121
-      Width = 121
-      Increment = 1
-      MaxValue = 1
-      MinValue = 0
-      TabOrder = 4
-      Value = 0.05
-    end
-    object dateEditFrom: TDateEdit
-      Left = 11
-      Height = 21
-      Top = 179
-      Width = 80
-      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
-      OKCaption = 'OK'
-      CancelCaption = 'Cancel'
-      DateOrder = doYMd
-      ButtonWidth = 23
-      CharCase = ecNormal
-      Glyph.Data = {
-        36040000424D3604000000000000360000002800000010000000100000000100
-        2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
-        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D69E
-        72C4D3996EF4D19668FFCE9263FFCB8E5EFFC98A5BFFC78756FFC38452FFC384
-        52FFC38452FFC38452FFC38452FFC38452FFBB7742B0FFFFFF00FFFFFF00D7A1
-        75FFF8F2EDFFF7F0EAFFF6EDE6FFF4EAE2FFF3E7DEFFF1E4DBFFF0E2D8FFEAD6
-        C8FFF2E5DCFFFAF4F1FFF9F3F0FFFAF5F2FFC58A5DFDFFFFFF00FFFFFF00D9A4
-        7AFFF9F3EEFFEBD2BEFFFFFFFFFFEBD3BFFFFFFFFFFFEBD3C0FFFFFFFFFFEAC7
-        ADFFECD9CDFFF1E4DBFFF9F3F0FFF9F2EFFFC68C5FFFFFFFFF00FFFFFF00DDA8
-        7EFFF9F3EFFFEBD0BAFFEBD0BBFF75B57AFF75B57AFF75B57AFFEBD1BDFFEACD
-        B5FFFAF4F0FFEBD9CCFFF1E4DBFFFAF4F1FFC68A5CFFFFFFFF00FFFFFF00DFAA
-        82FFF9F3EFFFEACEB7FFFFFFFFFF75B57AFF94D49BFF74B579FFFFFFFFFFEACF
-        BAFFFBF6F2FFFAF3F0FFEBD8CBFFF2E6DDFFC88D5FFFFFFFFF00FFFFFF00E1AE
-        87FFFAF4F0FFEACBB2FFEACCB3FF75B57AFF74B579FF73B478FFEACEB7FF70B3
-        75FF6FB274FF6EB172FFE8C8AEFFEAD7C9FFC48654FFFFFFFF00FFFFFF00E3B1
-        8CFFFAF6F1FFEAC9AEFFFFFFFFFFEAC9B0FFFFFFFFFFE9CBB3FFFFFFFFFF6FB1
-        73FF8ED295FF6BAF6FFFFFFFFFFFF1E5DBFFC68655FFFFFFFF00FFFFFF00E5B4
-        8FFFFAF6F2FFE9C6AAFFE9C6ACFFEAC7ACFFE9C7ADFFE9C9AEFFE9C9B0FF6CB0
-        71FF6AAF6EFF68AD6DFFE8CCB5FFF2E7DEFFC88A59FFFFFFFF00FFFFFF00E7B7
-        94FFFBF7F4FFE9C3A6FFFFFFFFFFE8C4A9FFFFFFFFFFE9C6AAFFFFFFFFFFE8C7
-        ACFFFFFFFFFFE8C8B0FFFFFFFFFFF7F1EBFFCB8F5FFFFFFFFF00FFFFFF00E9BA
-        98FFFBF7F4FF65A4FFFF64A3FFFF62A2FFFF61A1FFFF5F9FFFFF5C9DFFFF5A9A
-        FFFF5798FFFF5495FFFF5294FFFFFBF7F4FFCE9364FFFFFFFF00FFFFFF00EBBD
-        9BFFFBF7F4FF64A4FFFF79BDFFFF75BBFFFF71B9FFFF6DB8FFFF68B3FFFF61B0
-        FFFF5AABFFFF54A7FFFF3B7DFFFFFBF7F4FFD1976AFFFFFFFF00FFFFFF00ECBF
-        9EFFFBF7F4FF65A4FFFF64A3FFFF60A0FFFF5D9EFFFF5899FFFF5496FFFF4D90
-        FFFF478BFFFF4284FFFF3D7FFFFFFBF7F4FFD49B6FFFFFFFFF00FFFFFF00EEC1
-        A1EBFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7
-        F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFD7A074F8FFFFFF00FFFFFF00EFC2
-        A37EEFC1A2E3EDC09FFFEBBE9DFFEBBC9AFFE9BA96FFE7B793FFE6B590FFE4B2
-        8CFFE2AF88FFE0AC84FFDDA980FFDCA57DFFDAA37ACAFFFFFF00FFFFFF00FFFF
-        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
-      }
-      NumGlyphs = 0
-      MaxLength = 10
-      TabOrder = 5
-    end
-    object dateEditTo: TDateEdit
-      Left = 134
-      Height = 21
-      Top = 176
-      Width = 80
-      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
-      OKCaption = 'OK'
-      CancelCaption = 'Cancel'
-      DateOrder = doYMd
-      ButtonWidth = 23
-      CharCase = ecNormal
-      Glyph.Data = {
-        36040000424D3604000000000000360000002800000010000000100000000100
-        2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
-        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D69E
-        72C4D3996EF4D19668FFCE9263FFCB8E5EFFC98A5BFFC78756FFC38452FFC384
-        52FFC38452FFC38452FFC38452FFC38452FFBB7742B0FFFFFF00FFFFFF00D7A1
-        75FFF8F2EDFFF7F0EAFFF6EDE6FFF4EAE2FFF3E7DEFFF1E4DBFFF0E2D8FFEAD6
-        C8FFF2E5DCFFFAF4F1FFF9F3F0FFFAF5F2FFC58A5DFDFFFFFF00FFFFFF00D9A4
-        7AFFF9F3EEFFEBD2BEFFFFFFFFFFEBD3BFFFFFFFFFFFEBD3C0FFFFFFFFFFEAC7
-        ADFFECD9CDFFF1E4DBFFF9F3F0FFF9F2EFFFC68C5FFFFFFFFF00FFFFFF00DDA8
-        7EFFF9F3EFFFEBD0BAFFEBD0BBFF75B57AFF75B57AFF75B57AFFEBD1BDFFEACD
-        B5FFFAF4F0FFEBD9CCFFF1E4DBFFFAF4F1FFC68A5CFFFFFFFF00FFFFFF00DFAA
-        82FFF9F3EFFFEACEB7FFFFFFFFFF75B57AFF94D49BFF74B579FFFFFFFFFFEACF
-        BAFFFBF6F2FFFAF3F0FFEBD8CBFFF2E6DDFFC88D5FFFFFFFFF00FFFFFF00E1AE
-        87FFFAF4F0FFEACBB2FFEACCB3FF75B57AFF74B579FF73B478FFEACEB7FF70B3
-        75FF6FB274FF6EB172FFE8C8AEFFEAD7C9FFC48654FFFFFFFF00FFFFFF00E3B1
-        8CFFFAF6F1FFEAC9AEFFFFFFFFFFEAC9B0FFFFFFFFFFE9CBB3FFFFFFFFFF6FB1
-        73FF8ED295FF6BAF6FFFFFFFFFFFF1E5DBFFC68655FFFFFFFF00FFFFFF00E5B4
-        8FFFFAF6F2FFE9C6AAFFE9C6ACFFEAC7ACFFE9C7ADFFE9C9AEFFE9C9B0FF6CB0
-        71FF6AAF6EFF68AD6DFFE8CCB5FFF2E7DEFFC88A59FFFFFFFF00FFFFFF00E7B7
-        94FFFBF7F4FFE9C3A6FFFFFFFFFFE8C4A9FFFFFFFFFFE9C6AAFFFFFFFFFFE8C7
-        ACFFFFFFFFFFE8C8B0FFFFFFFFFFF7F1EBFFCB8F5FFFFFFFFF00FFFFFF00E9BA
-        98FFFBF7F4FF65A4FFFF64A3FFFF62A2FFFF61A1FFFF5F9FFFFF5C9DFFFF5A9A
-        FFFF5798FFFF5495FFFF5294FFFFFBF7F4FFCE9364FFFFFFFF00FFFFFF00EBBD
-        9BFFFBF7F4FF64A4FFFF79BDFFFF75BBFFFF71B9FFFF6DB8FFFF68B3FFFF61B0
-        FFFF5AABFFFF54A7FFFF3B7DFFFFFBF7F4FFD1976AFFFFFFFF00FFFFFF00ECBF
-        9EFFFBF7F4FF65A4FFFF64A3FFFF60A0FFFF5D9EFFFF5899FFFF5496FFFF4D90
-        FFFF478BFFFF4284FFFF3D7FFFFFFBF7F4FFD49B6FFFFFFFFF00FFFFFF00EEC1
-        A1EBFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7
-        F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFD7A074F8FFFFFF00FFFFFF00EFC2
-        A37EEFC1A2E3EDC09FFFEBBE9DFFEBBC9AFFE9BA96FFE7B793FFE6B590FFE4B2
-        8CFFE2AF88FFE0AC84FFDDA980FFDCA57DFFDAA37ACAFFFFFF00FFFFFF00FFFF
-        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
-      }
-      NumGlyphs = 0
-      MaxLength = 10
-      TabOrder = 6
-    end
-    object DBGrid1: TDBGrid
-      Left = 342
-      Height = 175
-      Top = 25
-      Width = 264
-      Color = clWindow
-      Columns = <>
-      DataSource = DataSource
-      ReadOnly = True
-      TabOrder = 7
+    object Label2: TLabel
+      Left = 9
+      Height = 14
+      Top = 47
+      Width = 49
+      Caption = 'Username'
+      ParentColor = False
     end
     object Label3: TLabel
-      Left = 14
+      Left = 11
       Height = 14
-      Top = 95
+      Top = 83
+      Width = 47
+      Caption = 'Password'
+      ParentColor = False
+    end
+    object Label4: TLabel
+      Left = 9
+      Height = 14
+      Top = 117
+      Width = 47
+      Caption = 'Database'
+      ParentColor = False
+    end
+    object edHost: TEdit
+      Left = 67
+      Height = 21
+      Top = 12
+      Width = 80
+      TabOrder = 0
+      Text = 'edHost'
+    end
+    object edUser: TEdit
+      Left = 66
+      Height = 21
+      Top = 47
+      Width = 80
+      TabOrder = 1
+      Text = 'edUser'
+    end
+    object edPass: TEdit
+      Left = 66
+      Height = 21
+      Top = 83
+      Width = 80
+      OnChange = edPassChange
+      TabOrder = 2
+      Text = 'edPass'
+    end
+    object edDB: TEdit
+      Left = 66
+      Height = 21
+      Top = 117
+      Width = 80
+      TabOrder = 3
+      Text = 'edDB'
+    end
+    object Button1: TButton
+      Left = 9
+      Height = 25
+      Top = 157
+      Width = 75
+      Caption = 'Konek'
+      TabOrder = 4
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 280
+    Height = 245
+    Top = 8
+    Width = 296
+    Caption = 'Parameter'
+    ClientHeight = 227
+    ClientWidth = 292
+    TabOrder = 1
+    OnClick = GroupBox2Click
+    object Label5: TLabel
+      Left = 11
+      Height = 14
+      Top = 13
       Width = 53
       Caption = 'Momentum'
       ParentColor = False
     end
-    object edSMomen: TEdit
-      Left = 102
-      Height = 21
-      Top = 95
-      Width = 80
-      TabOrder = 8
-      Text = 'edSMomen'
+    object Label6: TLabel
+      Left = 11
+      Height = 14
+      Top = 45
+      Width = 68
+      Caption = 'Learning Rate'
+      ParentColor = False
     end
-    object Label4: TLabel
-      Left = 14
+    object Label7: TLabel
+      Left = 11
+      Height = 14
+      Top = 80
+      Width = 30
+      Caption = 'Epoch'
+      ParentColor = False
+    end
+    object Label8: TLabel
+      Left = 11
+      Height = 14
+      Top = 108
+      Width = 52
+      Caption = 'Error Maks'
+      ParentColor = False
+    end
+    object Label9: TLabel
+      Left = 11
       Height = 14
       Top = 152
       Width = 76
       Caption = 'Fungsi Transfer'
       ParentColor = False
     end
-    object ft: TComboBox
-      Left = 102
+    object edMomen: TEdit
+      Left = 88
       Height = 21
-      Top = 152
+      Top = 13
+      Width = 80
+      TabOrder = 0
+      Text = 'edMomen'
+    end
+    object edLR: TEdit
+      Left = 88
+      Height = 21
+      Top = 48
+      Width = 80
+      TabOrder = 1
+      Text = 'edLR'
+    end
+    object edEpoch: TEdit
+      Left = 88
+      Height = 21
+      Top = 77
+      Width = 80
+      TabOrder = 2
+      Text = 'edEpoch'
+    end
+    object edEMax: TEdit
+      Left = 88
+      Height = 21
+      Top = 108
+      Width = 80
+      TabOrder = 3
+      Text = 'edEMax'
+    end
+    object ft: TComboBox
+      Left = 88
+      Height = 21
+      Top = 144
       Width = 100
       ItemHeight = 13
       Items.Strings = (
-        'Binar Sigmoid'
+        'Binary Sigmoid'
         'Bipolar Sigmoid'
       )
-      TabOrder = 9
+      TabOrder = 4
       Text = 'ft'
     end
+    object Button2: TButton
+      Left = 11
+      Height = 25
+      Top = 187
+      Width = 75
+      Caption = 'Set'
+      TabOrder = 5
+    end
+    object Button3: TButton
+      Left = 102
+      Height = 25
+      Top = 187
+      Width = 75
+      Caption = 'New'
+      TabOrder = 6
+    end
   end
-  object Panel1: TPanel
-    Left = 0
-    Height = 314
-    Top = 225
-    Width = 905
-    Align = alBottom
-    ClientHeight = 314
-    ClientWidth = 905
-    TabOrder = 1
-    object GroupBox2: TGroupBox
-      Left = 8
-      Height = 225
-      Top = 7
-      Width = 248
-      Caption = 'Target'
-      ClientHeight = 207
-      ClientWidth = 244
+  object GroupBox3: TGroupBox
+    Left = 592
+    Height = 241
+    Top = 12
+    Width = 192
+    Caption = 'Trainning'
+    ClientHeight = 223
+    ClientWidth = 188
+    TabOrder = 2
+    object ProgressBar1: TProgressBar
+      Left = 6
+      Height = 20
+      Top = 8
+      Width = 168
       TabOrder = 0
-      object target: TStringGrid
-        Left = 6
-        Height = 100
-        Top = 48
-        Width = 200
-        TabOrder = 0
-      end
     end
-    object GroupBox3: TGroupBox
-      Left = 264
-      Height = 288
-      Top = 7
-      Width = 297
-      Caption = 'Hidden Layer'
-      ClientHeight = 270
-      ClientWidth = 293
+    object Button4: TButton
+      Left = 6
+      Height = 25
+      Top = 40
+      Width = 75
+      Caption = 'Run BP'
       TabOrder = 1
-      OnClick = GroupBox3Click
-      object VijHidden: TStringGrid
-        Left = 85
-        Height = 100
-        Top = 8
-        Width = 200
-        TabOrder = 0
-      end
-      object WijHidden: TStringGrid
-        Left = 86
-        Height = 100
-        Top = 160
-        Width = 200
-        TabOrder = 1
-      end
-      object Label1: TLabel
-        Left = 182
-        Height = 14
-        Top = -8
-        Width = 95
-        Caption = 'Bobot Input-Hidden'
-        ParentColor = False
-      end
-      object Label2: TLabel
-        Left = 182
-        Height = 14
-        Top = 134
-        Width = 103
-        Caption = 'Bobot Hidden-Output'
-        ParentColor = False
-      end
     end
-    object DateEdit1: TDateEdit
+    object Button5: TButton
+      Left = 94
+      Height = 25
+      Top = 40
+      Width = 75
+      Caption = 'Run BP + GA'
+      TabOrder = 2
+    end
+    object Label10: TLabel
+      Left = 6
+      Height = 14
+      Top = 80
+      Width = 78
+      Caption = 'Error Rata-Rata'
+      ParentColor = False
+    end
+    object Label11: TLabel
+      Left = 6
+      Height = 14
+      Top = 107
+      Width = 52
+      Caption = 'Error Maks'
+      ParentColor = False
+    end
+    object Label12: TLabel
+      Left = 6
+      Height = 14
+      Top = 133
+      Width = 67
+      Caption = 'Waktu Proses'
+      ParentColor = False
+    end
+    object Button6: TButton
+      Left = 6
+      Height = 25
+      Top = 170
+      Width = 75
+      Caption = 'Grafik Sistem'
+      TabOrder = 3
+    end
+    object Label18: TLabel
+      Left = 115
+      Height = 14
+      Top = 80
+      Width = 16
+      Caption = 'lER'
+      ParentColor = False
+    end
+    object Label19: TLabel
+      Left = 114
+      Height = 14
+      Top = 104
+      Width = 17
+      Caption = 'lEM'
+      ParentColor = False
+    end
+    object Label20: TLabel
+      Left = 114
+      Height = 14
+      Top = 132
+      Width = 19
+      Caption = 'lWP'
+      ParentColor = False
+    end
+  end
+  object GroupBox4: TGroupBox
+    Left = 792
+    Height = 242
+    Top = 11
+    Width = 209
+    Caption = 'Testing'
+    ClientHeight = 224
+    ClientWidth = 205
+    TabOrder = 3
+    object ProgressBar2: TProgressBar
       Left = 16
+      Height = 20
+      Top = 8
+      Width = 160
+      TabOrder = 0
+    end
+    object Button7: TButton
+      Left = 16
+      Height = 25
+      Top = 40
+      Width = 75
+      Caption = 'Run BP'
+      TabOrder = 1
+    end
+    object Button8: TButton
+      Left = 104
+      Height = 25
+      Top = 40
+      Width = 75
+      Caption = 'Run BP + GA'
+      TabOrder = 2
+    end
+    object Label13: TLabel
+      Left = 16
+      Height = 14
+      Top = 80
+      Width = 78
+      Caption = 'Error Rata-Rata'
+      ParentColor = False
+    end
+    object Label14: TLabel
+      Left = 16
+      Height = 14
+      Top = 105
+      Width = 52
+      Caption = 'Error Maks'
+      ParentColor = False
+    end
+    object Label15: TLabel
+      Left = 16
+      Height = 14
+      Top = 133
+      Width = 65
+      Caption = 'waktu Proses'
+      ParentColor = False
+    end
+    object Button9: TButton
+      Left = 16
+      Height = 25
+      Top = 170
+      Width = 75
+      Caption = 'Grafik Sistem'
+      OnClick = Button9Click
+      TabOrder = 3
+    end
+    object Button10: TButton
+      Left = 104
+      Height = 25
+      Top = 170
+      Width = 75
+      Caption = 'Exit'
+      OnClick = Button10Click
+      TabOrder = 4
+    end
+    object Label21: TLabel
+      Left = 130
+      Height = 14
+      Top = 80
+      Width = 18
+      Caption = 'tER'
+      ParentColor = False
+    end
+    object Label22: TLabel
+      Left = 130
+      Height = 14
+      Top = 105
+      Width = 19
+      Caption = 'tEM'
+      ParentColor = False
+    end
+    object Label23: TLabel
+      Left = 130
+      Height = 14
+      Top = 133
+      Width = 21
+      Caption = 'tWP'
+      ParentColor = False
+    end
+  end
+  object GroupBox5: TGroupBox
+    Left = 16
+    Height = 169
+    Top = 272
+    Width = 237
+    Caption = 'Input Layer'
+    ClientHeight = 151
+    ClientWidth = 233
+    TabOrder = 4
+    object DateEditFrom: TDateEdit
+      Left = 6
       Height = 21
-      Top = 31
+      Top = 0
       Width = 80
       CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
       OKCaption = 'OK'
       CancelCaption = 'Cancel'
-      DateOrder = doNone
+      DateOrder = doYMd
       ButtonWidth = 23
       CharCase = ecNormal
       Glyph.Data = {
@@ -336,187 +447,270 @@ object Form1: TForm1
         FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
       }
       NumGlyphs = 0
-      MaxLength = 0
-      TabOrder = 2
-    end
-    object GroupBox4: TGroupBox
-      Left = 624
-      Height = 200
-      Top = 7
-      Width = 233
-      Caption = 'Output'
-      ClientHeight = 182
-      ClientWidth = 229
-      TabOrder = 3
-      object YOutput: TStringGrid
-        Left = 14
-        Height = 100
-        Top = 8
-        Width = 200
-        TabOrder = 0
-      end
-    end
-  end
-  object GroupBox1: TGroupBox
-    Left = 616
-    Height = 225
-    Top = 0
-    Width = 289
-    Align = alRight
-    Caption = 'Database'
-    ClientHeight = 207
-    ClientWidth = 285
-    TabOrder = 2
-    object edt_hostName: TEdit
-      Left = 158
-      Height = 21
-      Top = 8
-      Width = 100
+      MaxLength = 10
       TabOrder = 0
-      Text = '127.0.0.1'
     end
-    object edt_port: TEdit
-      Left = 158
+    object DateEditTo: TDateEdit
+      Left = 126
       Height = 21
-      Top = 39
-      Width = 100
+      Top = 0
+      Width = 80
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      OKCaption = 'OK'
+      CancelCaption = 'Cancel'
+      DateOrder = doYMd
+      ButtonWidth = 23
+      CharCase = ecNormal
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D69E
+        72C4D3996EF4D19668FFCE9263FFCB8E5EFFC98A5BFFC78756FFC38452FFC384
+        52FFC38452FFC38452FFC38452FFC38452FFBB7742B0FFFFFF00FFFFFF00D7A1
+        75FFF8F2EDFFF7F0EAFFF6EDE6FFF4EAE2FFF3E7DEFFF1E4DBFFF0E2D8FFEAD6
+        C8FFF2E5DCFFFAF4F1FFF9F3F0FFFAF5F2FFC58A5DFDFFFFFF00FFFFFF00D9A4
+        7AFFF9F3EEFFEBD2BEFFFFFFFFFFEBD3BFFFFFFFFFFFEBD3C0FFFFFFFFFFEAC7
+        ADFFECD9CDFFF1E4DBFFF9F3F0FFF9F2EFFFC68C5FFFFFFFFF00FFFFFF00DDA8
+        7EFFF9F3EFFFEBD0BAFFEBD0BBFF75B57AFF75B57AFF75B57AFFEBD1BDFFEACD
+        B5FFFAF4F0FFEBD9CCFFF1E4DBFFFAF4F1FFC68A5CFFFFFFFF00FFFFFF00DFAA
+        82FFF9F3EFFFEACEB7FFFFFFFFFF75B57AFF94D49BFF74B579FFFFFFFFFFEACF
+        BAFFFBF6F2FFFAF3F0FFEBD8CBFFF2E6DDFFC88D5FFFFFFFFF00FFFFFF00E1AE
+        87FFFAF4F0FFEACBB2FFEACCB3FF75B57AFF74B579FF73B478FFEACEB7FF70B3
+        75FF6FB274FF6EB172FFE8C8AEFFEAD7C9FFC48654FFFFFFFF00FFFFFF00E3B1
+        8CFFFAF6F1FFEAC9AEFFFFFFFFFFEAC9B0FFFFFFFFFFE9CBB3FFFFFFFFFF6FB1
+        73FF8ED295FF6BAF6FFFFFFFFFFFF1E5DBFFC68655FFFFFFFF00FFFFFF00E5B4
+        8FFFFAF6F2FFE9C6AAFFE9C6ACFFEAC7ACFFE9C7ADFFE9C9AEFFE9C9B0FF6CB0
+        71FF6AAF6EFF68AD6DFFE8CCB5FFF2E7DEFFC88A59FFFFFFFF00FFFFFF00E7B7
+        94FFFBF7F4FFE9C3A6FFFFFFFFFFE8C4A9FFFFFFFFFFE9C6AAFFFFFFFFFFE8C7
+        ACFFFFFFFFFFE8C8B0FFFFFFFFFFF7F1EBFFCB8F5FFFFFFFFF00FFFFFF00E9BA
+        98FFFBF7F4FF65A4FFFF64A3FFFF62A2FFFF61A1FFFF5F9FFFFF5C9DFFFF5A9A
+        FFFF5798FFFF5495FFFF5294FFFFFBF7F4FFCE9364FFFFFFFF00FFFFFF00EBBD
+        9BFFFBF7F4FF64A4FFFF79BDFFFF75BBFFFF71B9FFFF6DB8FFFF68B3FFFF61B0
+        FFFF5AABFFFF54A7FFFF3B7DFFFFFBF7F4FFD1976AFFFFFFFF00FFFFFF00ECBF
+        9EFFFBF7F4FF65A4FFFF64A3FFFF60A0FFFF5D9EFFFF5899FFFF5496FFFF4D90
+        FFFF478BFFFF4284FFFF3D7FFFFFFBF7F4FFD49B6FFFFFFFFF00FFFFFF00EEC1
+        A1EBFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7
+        F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFD7A074F8FFFFFF00FFFFFF00EFC2
+        A37EEFC1A2E3EDC09FFFEBBE9DFFEBBC9AFFE9BA96FFE7B793FFE6B590FFE4B2
+        8CFFE2AF88FFE0AC84FFDDA980FFDCA57DFFDAA37ACAFFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+      }
+      NumGlyphs = 0
+      MaxLength = 10
       TabOrder = 1
-      Text = '3306'
     end
-    object edt_database: TEdit
-      Left = 158
-      Height = 21
-      Top = 71
-      Width = 100
+    object DBGrid1: TDBGrid
+      Left = 14
+      Height = 100
+      Top = 32
+      Width = 200
+      Color = clWindow
+      Columns = <>
       TabOrder = 2
-      Text = 'bmg_bjm'
-    end
-    object edt_username: TEdit
-      Left = 158
-      Height = 21
-      Top = 104
-      Width = 100
-      TabOrder = 3
-      Text = 'root'
-    end
-    object edt_password: TEdit
-      Left = 158
-      Height = 21
-      Top = 140
-      Width = 100
-      TabOrder = 4
-    end
-    object btnConnect: TButton
-      Left = 158
-      Height = 25
-      Top = 176
-      Width = 99
-      Caption = 'Connect'
-      OnClick = btnConnectClick
-      TabOrder = 5
     end
   end
-  object Connection: TMySQL50Connection
+  object GroupBox6: TGroupBox
+    Left = 272
+    Height = 163
+    Top = 272
+    Width = 233
+    Caption = 'Target'
+    ClientHeight = 145
+    ClientWidth = 229
+    TabOrder = 5
+    object DateEditFromT: TDateEdit
+      Left = 8
+      Height = 21
+      Top = 5
+      Width = 80
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      OKCaption = 'OK'
+      CancelCaption = 'Cancel'
+      DateOrder = doYMd
+      ButtonWidth = 23
+      CharCase = ecNormal
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D69E
+        72C4D3996EF4D19668FFCE9263FFCB8E5EFFC98A5BFFC78756FFC38452FFC384
+        52FFC38452FFC38452FFC38452FFC38452FFBB7742B0FFFFFF00FFFFFF00D7A1
+        75FFF8F2EDFFF7F0EAFFF6EDE6FFF4EAE2FFF3E7DEFFF1E4DBFFF0E2D8FFEAD6
+        C8FFF2E5DCFFFAF4F1FFF9F3F0FFFAF5F2FFC58A5DFDFFFFFF00FFFFFF00D9A4
+        7AFFF9F3EEFFEBD2BEFFFFFFFFFFEBD3BFFFFFFFFFFFEBD3C0FFFFFFFFFFEAC7
+        ADFFECD9CDFFF1E4DBFFF9F3F0FFF9F2EFFFC68C5FFFFFFFFF00FFFFFF00DDA8
+        7EFFF9F3EFFFEBD0BAFFEBD0BBFF75B57AFF75B57AFF75B57AFFEBD1BDFFEACD
+        B5FFFAF4F0FFEBD9CCFFF1E4DBFFFAF4F1FFC68A5CFFFFFFFF00FFFFFF00DFAA
+        82FFF9F3EFFFEACEB7FFFFFFFFFF75B57AFF94D49BFF74B579FFFFFFFFFFEACF
+        BAFFFBF6F2FFFAF3F0FFEBD8CBFFF2E6DDFFC88D5FFFFFFFFF00FFFFFF00E1AE
+        87FFFAF4F0FFEACBB2FFEACCB3FF75B57AFF74B579FF73B478FFEACEB7FF70B3
+        75FF6FB274FF6EB172FFE8C8AEFFEAD7C9FFC48654FFFFFFFF00FFFFFF00E3B1
+        8CFFFAF6F1FFEAC9AEFFFFFFFFFFEAC9B0FFFFFFFFFFE9CBB3FFFFFFFFFF6FB1
+        73FF8ED295FF6BAF6FFFFFFFFFFFF1E5DBFFC68655FFFFFFFF00FFFFFF00E5B4
+        8FFFFAF6F2FFE9C6AAFFE9C6ACFFEAC7ACFFE9C7ADFFE9C9AEFFE9C9B0FF6CB0
+        71FF6AAF6EFF68AD6DFFE8CCB5FFF2E7DEFFC88A59FFFFFFFF00FFFFFF00E7B7
+        94FFFBF7F4FFE9C3A6FFFFFFFFFFE8C4A9FFFFFFFFFFE9C6AAFFFFFFFFFFE8C7
+        ACFFFFFFFFFFE8C8B0FFFFFFFFFFF7F1EBFFCB8F5FFFFFFFFF00FFFFFF00E9BA
+        98FFFBF7F4FF65A4FFFF64A3FFFF62A2FFFF61A1FFFF5F9FFFFF5C9DFFFF5A9A
+        FFFF5798FFFF5495FFFF5294FFFFFBF7F4FFCE9364FFFFFFFF00FFFFFF00EBBD
+        9BFFFBF7F4FF64A4FFFF79BDFFFF75BBFFFF71B9FFFF6DB8FFFF68B3FFFF61B0
+        FFFF5AABFFFF54A7FFFF3B7DFFFFFBF7F4FFD1976AFFFFFFFF00FFFFFF00ECBF
+        9EFFFBF7F4FF65A4FFFF64A3FFFF60A0FFFF5D9EFFFF5899FFFF5496FFFF4D90
+        FFFF478BFFFF4284FFFF3D7FFFFFFBF7F4FFD49B6FFFFFFFFF00FFFFFF00EEC1
+        A1EBFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7
+        F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFD7A074F8FFFFFF00FFFFFF00EFC2
+        A37EEFC1A2E3EDC09FFFEBBE9DFFEBBC9AFFE9BA96FFE7B793FFE6B590FFE4B2
+        8CFFE2AF88FFE0AC84FFDDA980FFDCA57DFFDAA37ACAFFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+      }
+      NumGlyphs = 0
+      MaxLength = 10
+      TabOrder = 0
+    end
+    object DateEditToT: TDateEdit
+      Left = 118
+      Height = 21
+      Top = 5
+      Width = 80
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      OKCaption = 'OK'
+      CancelCaption = 'Cancel'
+      DateOrder = doYMd
+      ButtonWidth = 23
+      CharCase = ecNormal
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D69E
+        72C4D3996EF4D19668FFCE9263FFCB8E5EFFC98A5BFFC78756FFC38452FFC384
+        52FFC38452FFC38452FFC38452FFC38452FFBB7742B0FFFFFF00FFFFFF00D7A1
+        75FFF8F2EDFFF7F0EAFFF6EDE6FFF4EAE2FFF3E7DEFFF1E4DBFFF0E2D8FFEAD6
+        C8FFF2E5DCFFFAF4F1FFF9F3F0FFFAF5F2FFC58A5DFDFFFFFF00FFFFFF00D9A4
+        7AFFF9F3EEFFEBD2BEFFFFFFFFFFEBD3BFFFFFFFFFFFEBD3C0FFFFFFFFFFEAC7
+        ADFFECD9CDFFF1E4DBFFF9F3F0FFF9F2EFFFC68C5FFFFFFFFF00FFFFFF00DDA8
+        7EFFF9F3EFFFEBD0BAFFEBD0BBFF75B57AFF75B57AFF75B57AFFEBD1BDFFEACD
+        B5FFFAF4F0FFEBD9CCFFF1E4DBFFFAF4F1FFC68A5CFFFFFFFF00FFFFFF00DFAA
+        82FFF9F3EFFFEACEB7FFFFFFFFFF75B57AFF94D49BFF74B579FFFFFFFFFFEACF
+        BAFFFBF6F2FFFAF3F0FFEBD8CBFFF2E6DDFFC88D5FFFFFFFFF00FFFFFF00E1AE
+        87FFFAF4F0FFEACBB2FFEACCB3FF75B57AFF74B579FF73B478FFEACEB7FF70B3
+        75FF6FB274FF6EB172FFE8C8AEFFEAD7C9FFC48654FFFFFFFF00FFFFFF00E3B1
+        8CFFFAF6F1FFEAC9AEFFFFFFFFFFEAC9B0FFFFFFFFFFE9CBB3FFFFFFFFFF6FB1
+        73FF8ED295FF6BAF6FFFFFFFFFFFF1E5DBFFC68655FFFFFFFF00FFFFFF00E5B4
+        8FFFFAF6F2FFE9C6AAFFE9C6ACFFEAC7ACFFE9C7ADFFE9C9AEFFE9C9B0FF6CB0
+        71FF6AAF6EFF68AD6DFFE8CCB5FFF2E7DEFFC88A59FFFFFFFF00FFFFFF00E7B7
+        94FFFBF7F4FFE9C3A6FFFFFFFFFFE8C4A9FFFFFFFFFFE9C6AAFFFFFFFFFFE8C7
+        ACFFFFFFFFFFE8C8B0FFFFFFFFFFF7F1EBFFCB8F5FFFFFFFFF00FFFFFF00E9BA
+        98FFFBF7F4FF65A4FFFF64A3FFFF62A2FFFF61A1FFFF5F9FFFFF5C9DFFFF5A9A
+        FFFF5798FFFF5495FFFF5294FFFFFBF7F4FFCE9364FFFFFFFF00FFFFFF00EBBD
+        9BFFFBF7F4FF64A4FFFF79BDFFFF75BBFFFF71B9FFFF6DB8FFFF68B3FFFF61B0
+        FFFF5AABFFFF54A7FFFF3B7DFFFFFBF7F4FFD1976AFFFFFFFF00FFFFFF00ECBF
+        9EFFFBF7F4FF65A4FFFF64A3FFFF60A0FFFF5D9EFFFF5899FFFF5496FFFF4D90
+        FFFF478BFFFF4284FFFF3D7FFFFFFBF7F4FFD49B6FFFFFFFFF00FFFFFF00EEC1
+        A1EBFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7
+        F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFD7A074F8FFFFFF00FFFFFF00EFC2
+        A37EEFC1A2E3EDC09FFFEBBE9DFFEBBC9AFFE9BA96FFE7B793FFE6B590FFE4B2
+        8CFFE2AF88FFE0AC84FFDDA980FFDCA57DFFDAA37ACAFFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+      }
+      NumGlyphs = 0
+      MaxLength = 10
+      TabOrder = 1
+    end
+    object DBGrid2: TDBGrid
+      Left = 14
+      Height = 100
+      Top = 32
+      Width = 200
+      Color = clWindow
+      Columns = <>
+      TabOrder = 2
+    end
+  end
+  object GroupBox7: TGroupBox
+    Left = 520
+    Height = 288
+    Top = 272
+    Width = 224
+    Caption = 'Hidden Layer'
+    ClientHeight = 270
+    ClientWidth = 220
+    TabOrder = 6
+    object Label16: TLabel
+      Left = 86
+      Height = 14
+      Top = 0
+      Width = 125
+      Caption = 'Bobot Input-Hidden Layer'
+      ParentColor = False
+    end
+    object VijHidden: TStringGrid
+      Left = 14
+      Height = 100
+      Top = 16
+      Width = 200
+      TabOrder = 0
+    end
+    object WijHidden: TStringGrid
+      Left = 14
+      Height = 100
+      Top = 160
+      Width = 200
+      TabOrder = 1
+    end
+    object Label17: TLabel
+      Left = 78
+      Height = 14
+      Top = 128
+      Width = 133
+      Caption = 'Bobot Hidden-Output Layer'
+      ParentColor = False
+    end
+  end
+  object GroupBox8: TGroupBox
+    Left = 760
+    Height = 153
+    Top = 272
+    Width = 217
+    Caption = 'Output Layer'
+    ClientHeight = 135
+    ClientWidth = 213
+    TabOrder = 7
+    object YOutput: TStringGrid
+      Left = 6
+      Height = 100
+      Top = 16
+      Width = 200
+      TabOrder = 0
+    end
+  end
+  object MySQL50Connection1: TMySQL50Connection
     Connected = False
     LoginPrompt = False
-    DatabaseName = 'bmg_bjm'
     KeepConnection = False
-    Params.Strings = (
-      'Port=3306'
-    )
-    Password = 'root'
-    Transaction = transaction
-    UserName = 'root'
-    HostName = 'localhost'
-    left = 704
-    top = 40
+    left = 184
+    top = 24
   end
-  object DataSource: TDatasource
-    DataSet = table_bmg_bjm
-    left = 704
-    top = 168
+  object Datasource1: TDatasource
+    left = 184
+    top = 200
   end
-  object table_bmg_bjm: TSQLQuery
+  object SQLQuery1: TSQLQuery
     IndexName = 'DEFAULT_ORDER'
-    Filtered = True
-    Database = Connection
-    Transaction = transaction
     ReadOnly = False
-    SQL.Strings = (
-      'SELECT * FROM bmg_bjm;'
-    )
     Params = <>
-    left = 704
-    top = 104
-    object table_bmg_bjmTanggal: TDateField
-      DisplayWidth = 10
-      FieldKind = fkData
-      FieldName = 'Tanggal'
-      Index = 0
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = True
-      Required = False
-      DisplayFormat = 'YYY-MM-DD'
-    end
-    object table_bmg_bjmSuhuMax: TFloatField
-      DisplayWidth = 10
-      FieldKind = fkData
-      FieldName = 'SuhuMax'
-      Index = 1
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = True
-      Required = False
-      MaxValue = 0
-      MinValue = 0
-      Precision = -1
-    end
-    object table_bmg_bjmSuhuMin: TFloatField
-      DisplayWidth = 10
-      FieldKind = fkData
-      FieldName = 'SuhuMin'
-      Index = 2
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = True
-      Required = False
-      MaxValue = 0
-      MinValue = 0
-      Precision = -1
-    end
-    object table_bmg_bjmSuhuAvg: TFloatField
-      DisplayWidth = 10
-      FieldKind = fkData
-      FieldName = 'SuhuAvg'
-      Index = 3
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = True
-      Required = False
-      MaxValue = 0
-      MinValue = 0
-      Precision = -1
-    end
-    object table_bmg_bjmKelembaban: TFloatField
-      DisplayWidth = 10
-      FieldKind = fkData
-      FieldName = 'Kelembaban'
-      Index = 4
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = True
-      Required = False
-      MaxValue = 0
-      MinValue = 0
-      Precision = -1
-    end
+    left = 184
+    top = 80
   end
-  object transaction: TSQLTransaction
+  object SQLTransaction1: TSQLTransaction
     Active = False
     Action = caNone
-    Database = Connection
-    left = 624
-    top = 104
+    left = 184
+    top = 136
   end
 end

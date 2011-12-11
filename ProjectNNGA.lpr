@@ -7,15 +7,15 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, display, LResources, SQLDBLaz, nnga
+  Forms, tachartlazaruspkg, display, grafik
   { you can add units after this };
 
-{$IFDEF WINDOWS}{$R ProjectNNGA.rc}{$ENDIF}
+{$R *.res}
 
 begin
-  {$I ProjectNNGA.lrs}
   Application.Initialize;
   Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TGrafiksistem, Grafiksistem);
   Application.Run;
 end.
 

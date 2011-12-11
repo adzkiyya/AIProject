@@ -2,56 +2,56 @@
 <CONFIG>
   <ProjectOptions>
     <Version Value="9"/>
+    <PathDelim Value="\"/>
     <General>
       <MainUnit Value="0"/>
+      <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
       <Icon Value="0"/>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
+    <i18n>
+      <EnableI18N LFM="False"/>
+    </i18n>
     <VersionInfo>
-      <Language Value=""/>
-      <CharSet Value=""/>
+      <StringTable ProductVersion=""/>
     </VersionInfo>
-    <BuildModes Count="1">
-      <Item1 Name="default" Default="True"/>
+    <BuildModes Count="1" Active="Default">
+      <Item1 Name="Default" Default="True"/>
     </BuildModes>
     <PublishOptions>
       <Version Value="2"/>
-      <IgnoreBinaries Value="False"/>
       <IncludeFileFilter Value="*.(pas|pp|inc|lfm|lpr|lrs|lpi|lpk|sh|xml)"/>
-      <ExcludeFileFilter Value="*.(bak|ppu|ppw|o|so);*~;backup"/>
+      <ExcludeFileFilter Value="*.(bak|ppu|o|so);*~;backup"/>
     </PublishOptions>
     <RunParams>
       <local>
         <FormatVersion Value="1"/>
-        <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
       </local>
     </RunParams>
-    <RequiredPackages Count="3">
+    <RequiredPackages Count="4">
       <Item1>
-        <PackageName Value="FCL"/>
+        <PackageName Value="TAChartLazarusPkg"/>
         <MinVersion Major="1" Valid="True"/>
       </Item1>
       <Item2>
-        <PackageName Value="SQLDBLaz"/>
-        <MinVersion Major="1" Release="1" Valid="True"/>
+        <PackageName Value="FCL"/>
+        <MinVersion Major="1" Valid="True"/>
       </Item2>
       <Item3>
-        <PackageName Value="LCL"/>
+        <PackageName Value="SQLDBLaz"/>
+        <MinVersion Major="1" Release="1" Valid="True"/>
       </Item3>
+      <Item4>
+        <PackageName Value="LCL"/>
+      </Item4>
     </RequiredPackages>
-    <Units Count="7">
+    <Units Count="5">
       <Unit0>
         <Filename Value="ProjectNNGA.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ProjectNNGA"/>
-        <EditorIndex Value="1"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="1" Y="20"/>
-        <UsageCount Value="29"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <UsageCount Value="24"/>
       </Unit0>
       <Unit1>
         <Filename Value="display.pas"/>
@@ -62,191 +62,178 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="107"/>
-        <CursorPos X="3" Y="122"/>
-        <UsageCount Value="29"/>
+        <TopLine Value="136"/>
+        <CursorPos X="3" Y="154"/>
+        <UsageCount Value="24"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
       <Unit2>
-        <Filename Value="nnga.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="nnga"/>
-        <EditorIndex Value="2"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="36"/>
-        <CursorPos X="22" Y="40"/>
-        <UsageCount Value="29"/>
-        <Loaded Value="True"/>
-      </Unit2>
-      <Unit3>
-        <Filename Value="/Vboxsvr/Downloads/adzkiyya-aiProject-f589f74/unit1.pas"/>
-        <ComponentName Value="Form1"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="Unit1"/>
-        <TopLine Value="96"/>
-        <CursorPos X="40" Y="110"/>
-        <UsageCount Value="9"/>
-      </Unit3>
-      <Unit4>
-        <Filename Value="/Vboxsvr/Downloads/adzkiyya-aiProject-f589f74/unit2.pas"/>
-        <ComponentName Value="GrafikSistem"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="Unit2"/>
-        <TopLine Value="8"/>
-        <CursorPos X="40" Y="6"/>
-        <UsageCount Value="9"/>
-      </Unit4>
-      <Unit5>
-        <Filename Value="/usr/share/fpcsrc/2.4.0/rtl/objpas/sysutils/datih.inc"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="112"/>
-        <CursorPos X="13" Y="124"/>
-        <UsageCount Value="9"/>
-      </Unit5>
-      <Unit6>
-        <Filename Value="/usr/share/fpcsrc/2.4.0/rtl/objpas/sysutils/dati.inc"/>
+        <Filename Value="display.lfm"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="56" Y="3"/>
-        <UsageCount Value="9"/>
-      </Unit6>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="grafik.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Grafiksistem"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="grafik"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="18"/>
+        <CursorPos X="1" Y="29"/>
+        <UsageCount Value="23"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="grafik.lfm"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit4>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="display.pas"/>
-        <Caret Line="88" Column="31" TopLine="71"/>
+        <Caret Line="54" Column="3" TopLine="36"/>
       </Position1>
       <Position2>
         <Filename Value="display.pas"/>
-        <Caret Line="78" Column="20" TopLine="65"/>
+        <Caret Line="55" Column="3" TopLine="37"/>
       </Position2>
       <Position3>
         <Filename Value="display.pas"/>
-        <Caret Line="72" Column="25" TopLine="64"/>
+        <Caret Line="56" Column="3" TopLine="38"/>
       </Position3>
       <Position4>
         <Filename Value="display.pas"/>
-        <Caret Line="76" Column="18" TopLine="64"/>
+        <Caret Line="57" Column="3" TopLine="39"/>
       </Position4>
       <Position5>
         <Filename Value="display.pas"/>
-        <Caret Line="77" Column="7" TopLine="64"/>
+        <Caret Line="58" Column="3" TopLine="40"/>
       </Position5>
       <Position6>
         <Filename Value="display.pas"/>
-        <Caret Line="90" Column="1" TopLine="78"/>
+        <Caret Line="59" Column="3" TopLine="41"/>
       </Position6>
       <Position7>
         <Filename Value="display.pas"/>
-        <Caret Line="91" Column="12" TopLine="78"/>
+        <Caret Line="60" Column="3" TopLine="42"/>
       </Position7>
       <Position8>
         <Filename Value="display.pas"/>
-        <Caret Line="92" Column="19" TopLine="80"/>
+        <Caret Line="61" Column="3" TopLine="43"/>
       </Position8>
       <Position9>
         <Filename Value="display.pas"/>
-        <Caret Line="91" Column="19" TopLine="79"/>
+        <Caret Line="62" Column="3" TopLine="44"/>
       </Position9>
       <Position10>
         <Filename Value="display.pas"/>
-        <Caret Line="90" Column="19" TopLine="78"/>
+        <Caret Line="63" Column="3" TopLine="45"/>
       </Position10>
       <Position11>
         <Filename Value="display.pas"/>
-        <Caret Line="89" Column="19" TopLine="77"/>
+        <Caret Line="64" Column="3" TopLine="46"/>
       </Position11>
       <Position12>
         <Filename Value="display.pas"/>
-        <Caret Line="88" Column="19" TopLine="76"/>
+        <Caret Line="65" Column="3" TopLine="47"/>
       </Position12>
       <Position13>
         <Filename Value="display.pas"/>
-        <Caret Line="89" Column="19" TopLine="77"/>
+        <Caret Line="66" Column="3" TopLine="48"/>
       </Position13>
       <Position14>
         <Filename Value="display.pas"/>
-        <Caret Line="90" Column="19" TopLine="78"/>
+        <Caret Line="67" Column="3" TopLine="49"/>
       </Position14>
       <Position15>
         <Filename Value="display.pas"/>
-        <Caret Line="89" Column="19" TopLine="77"/>
+        <Caret Line="68" Column="3" TopLine="50"/>
       </Position15>
       <Position16>
         <Filename Value="display.pas"/>
-        <Caret Line="90" Column="19" TopLine="78"/>
+        <Caret Line="69" Column="3" TopLine="51"/>
       </Position16>
       <Position17>
         <Filename Value="display.pas"/>
-        <Caret Line="91" Column="19" TopLine="79"/>
+        <Caret Line="70" Column="3" TopLine="52"/>
       </Position17>
       <Position18>
         <Filename Value="display.pas"/>
-        <Caret Line="93" Column="19" TopLine="81"/>
+        <Caret Line="71" Column="3" TopLine="53"/>
       </Position18>
       <Position19>
         <Filename Value="display.pas"/>
-        <Caret Line="112" Column="3" TopLine="97"/>
+        <Caret Line="72" Column="3" TopLine="54"/>
       </Position19>
       <Position20>
         <Filename Value="display.pas"/>
-        <Caret Line="113" Column="3" TopLine="98"/>
+        <Caret Line="73" Column="3" TopLine="55"/>
       </Position20>
       <Position21>
         <Filename Value="display.pas"/>
-        <Caret Line="114" Column="3" TopLine="99"/>
+        <Caret Line="74" Column="3" TopLine="56"/>
       </Position21>
       <Position22>
         <Filename Value="display.pas"/>
-        <Caret Line="115" Column="3" TopLine="100"/>
+        <Caret Line="75" Column="3" TopLine="57"/>
       </Position22>
       <Position23>
         <Filename Value="display.pas"/>
-        <Caret Line="116" Column="3" TopLine="101"/>
+        <Caret Line="76" Column="3" TopLine="58"/>
       </Position23>
       <Position24>
         <Filename Value="display.pas"/>
-        <Caret Line="117" Column="3" TopLine="102"/>
+        <Caret Line="77" Column="3" TopLine="59"/>
       </Position24>
       <Position25>
         <Filename Value="display.pas"/>
-        <Caret Line="118" Column="3" TopLine="103"/>
+        <Caret Line="79" Column="3" TopLine="60"/>
       </Position25>
       <Position26>
         <Filename Value="display.pas"/>
-        <Caret Line="119" Column="3" TopLine="104"/>
+        <Caret Line="94" Column="25" TopLine="76"/>
       </Position26>
       <Position27>
-        <Filename Value="display.pas"/>
-        <Caret Line="118" Column="3" TopLine="103"/>
+        <Filename Value="grafik.pas"/>
+        <Caret Line="2" Column="11" TopLine="1"/>
       </Position27>
       <Position28>
-        <Filename Value="display.pas"/>
-        <Caret Line="119" Column="3" TopLine="104"/>
+        <Filename Value="grafik.pas"/>
+        <Caret Line="37" Column="14" TopLine="19"/>
       </Position28>
       <Position29>
-        <Filename Value="display.pas"/>
-        <Caret Line="120" Column="3" TopLine="105"/>
+        <Filename Value="grafik.pas"/>
+        <Caret Line="29" Column="12" TopLine="8"/>
       </Position29>
       <Position30>
         <Filename Value="display.pas"/>
-        <Caret Line="121" Column="3" TopLine="106"/>
+        <Caret Line="97" Column="1" TopLine="82"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>
     <Version Value="9"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="ProjectNNGA"/>
+    </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
-    <Parsing>
-      <SyntaxOptions>
-        <UseAnsiStrings Value="False"/>
-      </SyntaxOptions>
-    </Parsing>
     <Linking>
       <Options>
         <Win32>
@@ -259,7 +246,7 @@
     </Other>
   </CompilerOptions>
   <Debugging>
-    <Exceptions Count="4">
+    <Exceptions Count="3">
       <Item1>
         <Name Value="EAbort"/>
       </Item1>
@@ -269,9 +256,6 @@
       <Item3>
         <Name Value="EFOpenError"/>
       </Item3>
-      <Item4>
-        <Name Value="EDatabaseError"/>
-      </Item4>
     </Exceptions>
   </Debugging>
 </CONFIG>
