@@ -79,6 +79,7 @@ type
     VijHidden: TStringGrid;
     WijHidden: TStringGrid;
     procedure Button10Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
     procedure Button9Click(Sender: TObject);
     procedure edPassChange(Sender: TObject);
     procedure GroupBox2Click(Sender: TObject);
@@ -96,7 +97,7 @@ var
 implementation
 uses grafik,nnga;
 {$R *.lfm}
-
+var isFinish: Boolean;
 { TForm1 }
 function TForm1.fft(no:integer;value:Extended):Extended;
 var eHasil:Extended;
@@ -141,6 +142,26 @@ end;
 procedure TForm1.Button10Click(Sender: TObject);
 begin
   Application.Terminate;
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+var  eMomen,eLR,eEpoch : Extended;
+  jInput,jHiden,jOutput,jLooping,ftOpsi:Integer;
+  Done : Boolean;
+  maxValue : real;
+begin
+  isFinish := false;
+  Button2.Enabled:=false;
+  Button3.Enabled:=false;
+  ftOpsi := ft.ItemIndex;
+
+  {-set stringGrid-}
+
+  {-Inisialisasi data penimbang-}
+
+  {-proses pelatihan-}
+
+  {-hasil pelatiha-}
 end;
 
 procedure TForm1.Button9Click(Sender: TObject);

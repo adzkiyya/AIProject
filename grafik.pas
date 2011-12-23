@@ -33,8 +33,7 @@ implementation
 
 procedure TGrafiksistem.Button1Click(Sender: TObject);
 begin
-  Grafiksistem.Enabled:=false;
-
+ Application.Terminate;
 end;
 
 end.
