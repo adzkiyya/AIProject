@@ -29,8 +29,9 @@ type
     DateEditFrom: TDateEdit;
     DBGrid1: TDBGrid;
     DBGrid2: TDBGrid;
+    edPort: TEdit;
     ft: TComboBox;
-    Datasource1: TDatasource;
+    Datasource: TDatasource;
     edHost: TEdit;
     edUser: TEdit;
     edPass: TEdit;
@@ -63,6 +64,7 @@ type
     Label21: TLabel;
     Label22: TLabel;
     Label23: TLabel;
+    Label24: TLabel;
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
@@ -70,7 +72,7 @@ type
     Label7: TLabel;
     Label8: TLabel;
     Label9: TLabel;
-    MySQL50Connection1: TMySQL50Connection;
+    Connection: TMySQL50Connection;
     ProgressBar1: TProgressBar;
     ProgressBar2: TProgressBar;
     SQLQuery1: TSQLQuery;
@@ -79,6 +81,7 @@ type
     VijHidden: TStringGrid;
     WijHidden: TStringGrid;
     procedure Button10Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Button9Click(Sender: TObject);
     procedure edPassChange(Sender: TObject);
@@ -142,6 +145,34 @@ end;
 procedure TForm1.Button10Click(Sender: TObject);
 begin
   Application.Terminate;
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+
+  Connection.HostName:=edHost.Text;
+  Connection.port:=strtoint(edPort.Text);
+  Connection.UserName:=edUser.Text;
+  Connection.Password:=edPass.Text;
+  Connection.DatabaseName:=edDB.Text;
+  try
+    Connection.Connected:=true;
+    GroupBox2.Enabled:=true;
+    GroupBox3.Enabled:=true;
+    GroupBox4.Enabled:=true;
+    GroupBox5.Enabled:=true;
+    GroupBox6.Enabled:=true;
+    GroupBox7.Enabled:=true;
+    GroupBox8.Enabled:=true;
+  except
+    GroupBox2.Enabled:=false;
+    GroupBox3.Enabled:=false;
+    GroupBox4.Enabled:=false;
+    GroupBox5.Enabled:=false;
+    GroupBox6.Enabled:=false;
+    GroupBox7.Enabled:=false;
+    GroupBox8.Enabled:=false;
+  end;
 end;
 
 procedure TForm1.Button4Click(Sender: TObject);

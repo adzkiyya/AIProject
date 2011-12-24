@@ -10,7 +10,7 @@ object Form1: TForm1
   object GroupBox1: TGroupBox
     Left = 11
     Height = 245
-    Top = 11
+    Top = 8
     Width = 253
     Caption = 'Database'
     ClientHeight = 227
@@ -84,10 +84,27 @@ object Form1: TForm1
     object Button1: TButton
       Left = 9
       Height = 25
-      Top = 157
+      Top = 184
       Width = 75
       Caption = 'Konek'
+      OnClick = Button1Click
       TabOrder = 4
+    end
+    object Label24: TLabel
+      Left = 13
+      Height = 14
+      Top = 151
+      Width = 21
+      Caption = 'Port'
+      ParentColor = False
+    end
+    object edPort: TEdit
+      Left = 67
+      Height = 21
+      Top = 145
+      Width = 80
+      TabOrder = 5
+      Text = '3306'
     end
   end
   object GroupBox2: TGroupBox
@@ -690,27 +707,39 @@ object Form1: TForm1
       TabOrder = 0
     end
   end
-  object MySQL50Connection1: TMySQL50Connection
+  object Connection: TMySQL50Connection
     Connected = False
     LoginPrompt = False
+    DatabaseName = 'bmg_bjm'
     KeepConnection = False
+    Params.Strings = (
+      'Port=3306'
+    )
+    Password = 'root'
+    Transaction = SQLTransaction1
+    UserName = 'root'
+    HostName = 'localhost'
     left = 184
     top = 24
   end
-  object Datasource1: TDatasource
+  object Datasource: TDatasource
     left = 184
     top = 200
   end
   object SQLQuery1: TSQLQuery
     IndexName = 'DEFAULT_ORDER'
+    Database = Connection
+    Transaction = SQLTransaction1
     ReadOnly = False
     Params = <>
+    DataSource = Datasource
     left = 184
     top = 80
   end
   object SQLTransaction1: TSQLTransaction
     Active = False
     Action = caNone
+    Database = Connection
     left = 184
     top = 136
   end

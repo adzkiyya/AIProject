@@ -1,0 +1,44 @@
+object Grafiksistem: TGrafiksistem
+  Left = 432
+  Height = 327
+  Top = 144
+  Width = 492
+  Caption = 'Grafik Performansi Sistem'
+  ClientHeight = 327
+  ClientWidth = 492
+  LCLVersion = '0.9.30'
+  object Chart1: TChart
+    Left = 8
+    Height = 264
+    Top = 8
+    Width = 432
+    AxisList = <    
+      item
+        Title.LabelFont.Orientation = 900
+        Title.Visible = True
+        Title.Caption = 'Error Sistem'
+      end    
+      item
+        Alignment = calBottom
+        Title.Visible = True
+        Title.Caption = 'Error/Epoch'
+      end>
+    Foot.Brush.Color = clBtnFace
+    Foot.Font.Color = clBlue
+    Title.Brush.Color = clBtnFace
+    Title.Font.Color = clBlue
+    Title.Text.Strings = (
+      'TAChart'
+    )
+    ParentColor = False
+  end
+  object Button1: TButton
+    Left = 8
+    Height = 25
+    Top = 288
+    Width = 75
+    Caption = 'Keluar'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+end
