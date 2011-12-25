@@ -1,0 +1,19 @@
+Log 2011-12-25
+1. Untuk sementara mengingat tanggal jatuh tempo makin dekat, kita menunda penggunaan pendekatan OOP. Jadi untuk menyelesaikan kasus backpropagation, kita menggunakan procedural saja
+2. Ada masalah query, gmana caranya kita mengambil data yang berbeda tanggalnya kemudian ditampilkan menjadi per kolom, contoh 
+
+|----------------------------------|----------------------------------|----------------------------------|
+|data suhu rata2 tanggal 2001-01-01|data suhu rata2 tanggal 2001-01-02|data kelembaban tanggal 2001-01-02|
+|----------------------------------|----------------------------------|----------------------------------|
+|23,89                             |25,38                             | 20                               |
+|----------------------------------|----------------------------------|----------------------------------|
+
+Hasilnya yang tampil di dbgrid harus seperti contoh di atas, yang kemudian dipindah ke stringgrid dengan tampilan  seperti ini
+                Input layer            Output layer
+|------|
+|23,89 |-->X1 ---O
+|------|
+|25,38 |-->X2 ---O                       O ---> suhu esok hari
+|------|
+|20    |-->X3 ---O
+|------|

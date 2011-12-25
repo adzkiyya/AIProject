@@ -77,12 +77,15 @@ type
     ProgressBar2: TProgressBar;
     SQLQuery1: TSQLQuery;
     SQLTransaction1: TSQLTransaction;
+    Target: TStringGrid;
+    XInput: TStringGrid;
     YOutput: TStringGrid;
     VijHidden: TStringGrid;
-    WijHidden: TStringGrid;
+    WjkHidden: TStringGrid;
     procedure Button10Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
     procedure Button9Click(Sender: TObject);
     procedure edPassChange(Sender: TObject);
     procedure GroupBox2Click(Sender: TObject);
@@ -90,6 +93,7 @@ type
     { private declarations }
     function fft(no:integer;value:Extended):Extended;
     function dft(no:integer;value:Extended):Extended;
+    function RandomWeight(low,high:Extended):Extended;
   public
     { public declarations }
   end; 
@@ -136,6 +140,10 @@ begin
       end;
       dft:=eHasil;
 end;
+function TForm1.RandomWeight(low,high:Extended):Extended;
+begin
+      RandomWeight:=Random(100)*(high-low)*0.01+low;
+end;
 
 procedure TForm1.GroupBox2Click(Sender: TObject);
 begin
@@ -176,28 +184,202 @@ begin
 end;
 
 procedure TForm1.Button4Click(Sender: TObject);
-var  eMomen,eLR,eEpoch : Extended;
+var  eMomen,eLR,eEpoch,eEMax : Extended;
   jInput,jHiden,jOutput,jLooping,ftOpsi:Integer;
+  counter,i,j,k : Integer;
+  dummy,dInput,dHiden,dOutput : Extended;
+  Xi : array[1..100] of real;
+  Vij,Vijupdate: array[0..100,1..100] of Extended;
+  Wjk,Wjkupdate: array[0..100,1..100] of Extended;
+  Zin_j,Zj : array[1..100] of Extended;
+  Yin_k,Yk : array[1..100] of Extended;
+  Otarget  : array[1..100] of Extended;
+  deltain_j,delta_j : array[1..100] of Extended;
+  delta_k   : array[1..30] of Extended;
+  eError, eES : Extended;
   Done : Boolean;
   maxValue : real;
 begin
   isFinish := false;
   Button2.Enabled:=false;
   Button3.Enabled:=false;
-  ftOpsi := ft.ItemIndex;
+  Button7.Enabled:=false;
+  Button8.Enabled:=false;
+  Button9.Enabled:=false;
+  Button10.Enabled:=false;
+  jInput  := 3;
+  jHiden  := 50;
+  jOutput := 1 ;
+  eMomen  := StrToFloat(edMomen.Text);
+  eLR     := StrToFloat(edLR.Text);
+  jLooping:= StrToInt(edEpoch.Text);
+  eEmax   := StrToFloat(edEMax.Text);
+  Done := false;
+  ftOpsi  := ft.ItemIndex;
+  {-set stringGrid- Langkah-langkahnya :
+  1. ambil data dari database, suhu rata-rata pada tanggal h-1, suhu rata-rata
+  pada tanggal h, dan kelembaban pada tanggal h untuk memprediksi suhu rata2 pada
+  tanggal h+1
+  2. kemudian siapkan stringgrid
+  3. Pindahkan data dari dbgrid ke stringgrid
+  }
 
-  {-set stringGrid-}
+  VijHidden.ColCount:=jHiden+1;
+  VijHidden.RowCount:=jInput+2;
+  VijHidden.Cells[0,0]:=' i/j';
+  for i:=1 to jInput do VijHidden.Cells[0,i]:=IntToStr(i-1);
+  for j:=1 to jHiden do VijHidden.Cells[j,0]:=IntToStr(j);
 
-  {-Inisialisasi data penimbang-}
+  WjkHidden.ColCount:=jOutput+1;
+  WjkHidden.RowCount:=jHiden+2;
+  WjkHidden.Cells[0,0]:='  j/k';
+  for j:=1 to jOutput do WjkHidden.Cells[0,j]:=IntToStr(j-1);
+  for k:=1 to jHiden do WjkHidden.Cells[k,0]:=IntToStr(k);
 
-  {-proses pelatihan-}
+  YOutput.ColCount:=jOutput+2;
+  YOutput.RowCount:=2;
+  YOutput.Cells[0,0]:='No.';
+  YOutput.Cells[1,0]:='Error';
+  for i:=1 to jOutput do
+   YOutput.Cells[i+1,0]:= 'Output' + IntToStr(i);
 
-  {-hasil pelatiha-}
+
+  {-Inisialisasi bobot input-hidden dan hidden-output -}
+   for i:=1 to jInput do Xi[i]:=StrToFloat(Xi.Cells[1,i]);
+   //Tahap awal lakukan normalisasi
+   maxValue := 0.0;
+   for i:=1 to jInput do
+    if Xi[i] > maxValue then  maxValue := Xi[i];
+
+   for i:=1 to jInput do  Xi[i]= Xi[i]/maxValue;
+   for i:=1 to jOutput do Otarget[i]:= StrToFloat(Target.Cells[1,i]);
+
+   RandSeed := 1000;
+   for i:=1 to jInput+1 do
+    for j:=1 to  jHiden do
+     Vij[i-1,j]:=RandomWeight(-0.5,0.5);
+
+   for j:=1 to jHiden+1 do
+    for k:=1 to jOutput do
+     Wjk[j-1,k]:=RandomWeight(-0.5,0.5);
+
+   {-Proses pelatihan-}
+   counter:=0;
+   ProgressBar1.Position:=0;
+   ProgressBar1.Max:=jLooping;
+   ProgressBar1.Update;
+   Grafiksistem.Chart1.ClearSeries;
+   Repeat
+      counter:=counter+1;
+      for j:=1 to jHiden do
+      begin
+      Zin_j[j]:=0;
+      for i:=1 to jInput do
+       Zin_j[j]:=Zin_j[j]+Xi[i]*Vij[i,j];
+       Zin_j[j]:=Zin_j[j]+Vij[0,j];
+       Zj[j]:=fft(ftOpsi,Zin_j[j]);
+     end;
+
+     for k:=1 to jOutput do
+     begin
+     Yin_k[k]:=0;
+     for j:=1 to jHiden do
+      Yin_k[k]:=Yin_k[k]+Zj[j]*Wjk[j,k];
+      Yin_k[k]:=Yin_k[k]+Wjk[0,k];
+      Yk[k]:=fft(ftOpsi,Yin_k[k]);
+     end;
+
+     eError:=0;
+     for k:=1 to jOutput do
+     eError:=eError+(Otarget[k]-Yk[k])*(Otarget[k]-Yk[k]);
+     eError:=0.5*eError;
+
+     if eError> eEMax then
+     begin
+     for k:=1 to jOutput do
+     begin
+      delta_k[k]:=(Otarget[k]-Yk[k])*dft(ftOpsi,Yin_k[k]);
+      for j:=1 to jHiden do
+       Wjkupdate[j,k]:=eLR*delta_k[k]*Zj[j]+(Wjkupdate[j,k]*eMomen);
+       Wjkupdate[0,k]:=eLR*delta_k[k];
+     end;
+
+     for j:=1 to jHiden do
+     begin
+     deltain_j[j]:=0;
+     for k:=1 to jOutput do
+       deltain_j[j]:=deltain_j[j]+delta_k[k]*Wjk[j,k];
+       delta_j[j]:=deltain_j[j]*dft(ftOpsi,Zin_j[j]);
+     end;
+
+     for j:=1 to jHiden do
+     begin
+     for i:=1 to jInput do
+       Vijupdate[i,j]:=eLR*delta_j[j]*Xi[i]+(Vij[i,j]*eMomen);
+       Vijupdate[0,j]:=eLR*delta_j[j];
+     end;
+
+     for j:=0 to jHiden do
+     for k:=1 to jOutput do
+       Wjk[j,k]:=Wjk[j,k]+Wjkupdate[j,k];
+
+     for i:=0 to jInput do
+     for j:=1 to jHiden do
+       Vij[i,j]:=Vij[i,j]+Vijupdate[i,j];
+     end else
+     begin
+     Done:=true;
+     end;
+
+     if Done=false then
+     begin
+      YOutput.Cells[1,counter]:=FloatToStrF(eError,ffGeneral,6,10);
+      Grafiksistem.Chart1.AddSeries(counter,eError,'');
+
+     for i:=1 to jOutput do
+      YOutput.Cells[1+i,counter]:=FloatToStrF(Yk[i],ffGeneral,6,10);
+      YOutput.Cells[0,counter]:=IntToStr(counter);
+     end;
+
+     if counter>=jLooping then Done:=true;
+     if Done=false then YOutput.RowCount:=YOutput.RowCount+1;
+
+     ProgressBar1.Position:=counter;
+     ProgressBar1.Update;
+  until Done=true or isFinish=true;
+  ProgressBar1.Position:=0;
+  ProgressBar1.Update;
+
+ {-hasil pelatihan-}
+   for i:=1 to jInput+1 do
+    for j:=1 to jHiden do
+     VijHidden.Cells[j,i]:=FloattoStrF(Vij[i-1,j],ffGeneral,6,10);
+
+   for j:=1 to jHiden+1 do
+    for k:=1 to jOutput do
+     WjkHidden.Cells[k,j]:=FloattoStrF(Wjk[j-1,k],ffGeneral,6,10);
+
+   YOutput.Cells[1,counter]:=FloattoStrF(eError,ffGeneral,6,10);
+   for i:=1 to jOutput do
+    YOutput.Cells[i+1,counter]:=FloattoStrF(Yk[i],ffGeneral,6,10);
+    YOutput.Cells[0,counter]:=IntToStr(counter);
+
+    Label18.Visible:=true;
+    Label19.Visible:=true;
+    Label20.Visible:=true;
+    XInput.Visible:=true;
+    VijHidden.Visible:=true;
+    WjkHidden.Visible:=true;
+    YOutput.Visible:=true;
+end;
+
+procedure TForm1.Button6Click(Sender: TObject);
+begin
+  Grafiksistem.show;
 end;
 
 procedure TForm1.Button9Click(Sender: TObject);
 begin
-  Form1.Enabled:=false;
   Grafiksistem.show;
 end;
 

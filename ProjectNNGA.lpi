@@ -46,12 +46,12 @@
         <PackageName Value="LCL"/>
       </Item4>
     </RequiredPackages>
-    <Units Count="6">
+    <Units Count="7">
       <Unit0>
         <Filename Value="ProjectNNGA.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ProjectNNGA"/>
-        <UsageCount Value="32"/>
+        <UsageCount Value="46"/>
       </Unit0>
       <Unit1>
         <Filename Value="display.pas"/>
@@ -62,9 +62,9 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="160"/>
-        <CursorPos X="3" Y="167"/>
-        <UsageCount Value="32"/>
+        <TopLine Value="351"/>
+        <CursorPos X="41" Y="362"/>
+        <UsageCount Value="46"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -73,7 +73,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit2>
       <Unit3>
@@ -82,11 +82,11 @@
         <ComponentName Value="Grafiksistem"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="grafik"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
         <TopLine Value="18"/>
         <CursorPos X="24" Y="36"/>
-        <UsageCount Value="31"/>
+        <UsageCount Value="45"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
@@ -94,140 +94,150 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="12"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit4>
       <Unit5>
         <Filename Value="..\aiProject_5122011\nnga.pas"/>
         <UnitName Value="nnga"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
         <TopLine Value="62"/>
         <CursorPos X="23" Y="84"/>
-        <UsageCount Value="14"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
       </Unit5>
+      <Unit6>
+        <Filename Value="C:\lazarus\components\tachart\tagraph.pas"/>
+        <UnitName Value="TAGraph"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="720"/>
+        <CursorPos X="18" Y="731"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
+      </Unit6>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="display.pas"/>
-        <Caret Line="57" Column="3" TopLine="39"/>
+        <Caret Line="191" Column="3" TopLine="180"/>
       </Position1>
       <Position2>
         <Filename Value="display.pas"/>
-        <Caret Line="58" Column="3" TopLine="40"/>
+        <Caret Line="265" Column="10" TopLine="175"/>
       </Position2>
       <Position3>
         <Filename Value="display.pas"/>
-        <Caret Line="59" Column="3" TopLine="41"/>
+        <Caret Line="269" Column="29" TopLine="255"/>
       </Position3>
       <Position4>
         <Filename Value="display.pas"/>
-        <Caret Line="60" Column="3" TopLine="42"/>
+        <Caret Line="267" Column="20" TopLine="256"/>
       </Position4>
       <Position5>
         <Filename Value="display.pas"/>
-        <Caret Line="61" Column="3" TopLine="43"/>
+        <Caret Line="268" Column="11" TopLine="257"/>
       </Position5>
       <Position6>
         <Filename Value="display.pas"/>
-        <Caret Line="62" Column="3" TopLine="44"/>
+        <Caret Line="335" Column="12" TopLine="313"/>
       </Position6>
       <Position7>
         <Filename Value="display.pas"/>
-        <Caret Line="63" Column="3" TopLine="45"/>
+        <Caret Line="228" Column="47" TopLine="217"/>
       </Position7>
       <Position8>
         <Filename Value="display.pas"/>
-        <Caret Line="64" Column="3" TopLine="46"/>
+        <Caret Line="282" Column="53" TopLine="271"/>
       </Position8>
       <Position9>
         <Filename Value="display.pas"/>
-        <Caret Line="65" Column="3" TopLine="47"/>
+        <Caret Line="284" Column="45" TopLine="273"/>
       </Position9>
       <Position10>
         <Filename Value="display.pas"/>
-        <Caret Line="66" Column="3" TopLine="48"/>
+        <Caret Line="290" Column="11" TopLine="279"/>
       </Position10>
       <Position11>
         <Filename Value="display.pas"/>
-        <Caret Line="67" Column="3" TopLine="49"/>
+        <Caret Line="292" Column="22" TopLine="281"/>
       </Position11>
       <Position12>
         <Filename Value="display.pas"/>
-        <Caret Line="68" Column="3" TopLine="50"/>
+        <Caret Line="293" Column="36" TopLine="282"/>
       </Position12>
       <Position13>
         <Filename Value="display.pas"/>
-        <Caret Line="69" Column="3" TopLine="51"/>
+        <Caret Line="318" Column="46" TopLine="306"/>
       </Position13>
       <Position14>
         <Filename Value="display.pas"/>
-        <Caret Line="70" Column="3" TopLine="52"/>
+        <Caret Line="307" Column="1" TopLine="307"/>
       </Position14>
       <Position15>
         <Filename Value="display.pas"/>
-        <Caret Line="71" Column="3" TopLine="53"/>
+        <Caret Line="228" Column="47" TopLine="217"/>
       </Position15>
       <Position16>
         <Filename Value="display.pas"/>
-        <Caret Line="72" Column="3" TopLine="54"/>
+        <Caret Line="284" Column="45" TopLine="273"/>
       </Position16>
       <Position17>
         <Filename Value="display.pas"/>
-        <Caret Line="73" Column="3" TopLine="55"/>
+        <Caret Line="318" Column="55" TopLine="307"/>
       </Position17>
       <Position18>
         <Filename Value="display.pas"/>
-        <Caret Line="74" Column="3" TopLine="56"/>
+        <Caret Line="349" Column="27" TopLine="327"/>
       </Position18>
       <Position19>
         <Filename Value="display.pas"/>
-        <Caret Line="75" Column="3" TopLine="57"/>
+        <Caret Line="228" Column="47" TopLine="217"/>
       </Position19>
       <Position20>
         <Filename Value="display.pas"/>
-        <Caret Line="76" Column="3" TopLine="58"/>
+        <Caret Line="283" Column="46" TopLine="272"/>
       </Position20>
       <Position21>
         <Filename Value="display.pas"/>
-        <Caret Line="77" Column="3" TopLine="59"/>
+        <Caret Line="245" Column="1" TopLine="223"/>
       </Position21>
       <Position22>
         <Filename Value="display.pas"/>
-        <Caret Line="79" Column="3" TopLine="60"/>
+        <Caret Line="230" Column="47" TopLine="219"/>
       </Position22>
       <Position23>
         <Filename Value="display.pas"/>
-        <Caret Line="94" Column="25" TopLine="76"/>
+        <Caret Line="236" Column="58" TopLine="219"/>
       </Position23>
       <Position24>
         <Filename Value="display.pas"/>
-        <Caret Line="97" Column="1" TopLine="82"/>
+        <Caret Line="248" Column="47" TopLine="237"/>
       </Position24>
       <Position25>
         <Filename Value="display.pas"/>
-        <Caret Line="116" Column="12" TopLine="94"/>
+        <Caret Line="254" Column="48" TopLine="243"/>
       </Position25>
       <Position26>
-        <Filename Value="grafik.pas"/>
-        <Caret Line="19" Column="49" TopLine="15"/>
+        <Filename Value="display.pas"/>
+        <Caret Line="236" Column="60" TopLine="223"/>
       </Position26>
       <Position27>
         <Filename Value="display.pas"/>
-        <Caret Line="164" Column="21" TopLine="147"/>
+        <Caret Line="248" Column="47" TopLine="237"/>
       </Position27>
       <Position28>
         <Filename Value="display.pas"/>
-        <Caret Line="162" Column="11" TopLine="146"/>
+        <Caret Line="303" Column="31" TopLine="291"/>
       </Position28>
       <Position29>
-        <Filename Value="display.pas"/>
-        <Caret Line="152" Column="29" TopLine="148"/>
+        <Filename Value="C:\lazarus\components\tachart\tagraph.pas"/>
+        <Caret Line="731" Column="18" TopLine="720"/>
       </Position29>
       <Position30>
         <Filename Value="display.pas"/>
-        <Caret Line="153" Column="29" TopLine="149"/>
+        <Caret Line="337" Column="55" TopLine="326"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>
