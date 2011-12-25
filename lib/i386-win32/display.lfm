@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 175
+  Left = 176
   Height = 602
-  Top = 30
+  Top = 160
   Width = 1009
   Caption = 'Form1'
   ClientHeight = 602
@@ -410,12 +410,12 @@ object Form1: TForm1
   end
   object GroupBox5: TGroupBox
     Left = 16
-    Height = 169
+    Height = 288
     Top = 272
-    Width = 237
+    Width = 240
     Caption = 'Input Layer'
-    ClientHeight = 151
-    ClientWidth = 233
+    ClientHeight = 270
+    ClientWidth = 236
     TabOrder = 4
     object DateEditFrom: TDateEdit
       Left = 6
@@ -528,15 +528,22 @@ object Form1: TForm1
       Columns = <>
       TabOrder = 2
     end
+    object XInput: TStringGrid
+      Left = 14
+      Height = 100
+      Top = 144
+      Width = 200
+      TabOrder = 3
+    end
   end
   object GroupBox6: TGroupBox
     Left = 272
-    Height = 163
+    Height = 288
     Top = 272
-    Width = 233
+    Width = 241
     Caption = 'Target'
-    ClientHeight = 145
-    ClientWidth = 229
+    ClientHeight = 270
+    ClientWidth = 237
     TabOrder = 5
     object DateEditFromT: TDateEdit
       Left = 8
@@ -648,6 +655,13 @@ object Form1: TForm1
       Color = clWindow
       Columns = <>
       TabOrder = 2
+    end
+    object Target: TStringGrid
+      Left = 14
+      Height = 100
+      Top = 152
+      Width = 200
+      TabOrder = 3
     end
   end
   object GroupBox7: TGroupBox
