@@ -51,7 +51,6 @@ type
     Label1: TLabel;
     Label10: TLabel;
     Label11: TLabel;
-    Label12: TLabel;
     Label13: TLabel;
     Label14: TLabel;
     Label15: TLabel;
@@ -60,7 +59,6 @@ type
     Label18: TLabel;
     Label19: TLabel;
     Label2: TLabel;
-    Label20: TLabel;
     Label21: TLabel;
     Label22: TLabel;
     Label23: TLabel;
@@ -245,13 +243,14 @@ begin
 
 
   {-Inisialisasi bobot input-hidden dan hidden-output -}
-   for i:=1 to jInput do Xi[i]:=StrToFloat(Xi.Cells[1,i]);
+
+   for i:=1 to jInput do Xi[i]:= StrToFloat(XInput.Cells[1,i]);
    //Tahap awal lakukan normalisasi
    maxValue := 0.0;
    for i:=1 to jInput do
     if Xi[i] > maxValue then  maxValue := Xi[i];
 
-   for i:=1 to jInput do  Xi[i]= Xi[i]/maxValue;
+   for i:=1 to jInput do  Xi[i]:= Xi[i]/maxValue;
    for i:=1 to jOutput do Otarget[i]:= StrToFloat(Target.Cells[1,i]);
 
    RandSeed := 1000;
@@ -275,7 +274,7 @@ begin
       begin
       Zin_j[j]:=0;
       for i:=1 to jInput do
-       Zin_j[j]:=Zin_j[j]+Xi[i]*Vij[i,j];
+        Zin_j[j]:=Zin_j[j]+Xi[i]*Vij[i,j];
        Zin_j[j]:=Zin_j[j]+Vij[0,j];
        Zj[j]:=fft(ftOpsi,Zin_j[j]);
      end;
@@ -300,8 +299,8 @@ begin
      begin
       delta_k[k]:=(Otarget[k]-Yk[k])*dft(ftOpsi,Yin_k[k]);
       for j:=1 to jHiden do
-       Wjkupdate[j,k]:=eLR*delta_k[k]*Zj[j]+(Wjkupdate[j,k]*eMomen);
-       Wjkupdate[0,k]:=eLR*delta_k[k];
+        Wjkupdate[j,k]:=eLR*delta_k[k]*Zj[j]+(Wjkupdate[j,k]*eMomen);
+      Wjkupdate[0,k]:=eLR*delta_k[k];
      end;
 
      for j:=1 to jHiden do
@@ -324,21 +323,21 @@ begin
        Wjk[j,k]:=Wjk[j,k]+Wjkupdate[j,k];
 
      for i:=0 to jInput do
-     for j:=1 to jHiden do
-       Vij[i,j]:=Vij[i,j]+Vijupdate[i,j];
+      for j:=1 to jHiden do
+        Vij[i,j]:=Vij[i,j]+Vijupdate[i,j];
      end else
      begin
-     Done:=true;
+      Done:=true;
      end;
 
      if Done=false then
      begin
       YOutput.Cells[1,counter]:=FloatToStrF(eError,ffGeneral,6,10);
-      Grafiksistem.Chart1.AddSeries(counter,eError,'');
+      //Grafiksistem.Chart1.AddSeries(counter,eError,'');
 
      for i:=1 to jOutput do
       YOutput.Cells[1+i,counter]:=FloatToStrF(Yk[i],ffGeneral,6,10);
-      YOutput.Cells[0,counter]:=IntToStr(counter);
+       YOutput.Cells[0,counter]:=IntToStr(counter);
      end;
 
      if counter>=jLooping then Done:=true;
@@ -364,9 +363,11 @@ begin
     YOutput.Cells[i+1,counter]:=FloattoStrF(Yk[i],ffGeneral,6,10);
     YOutput.Cells[0,counter]:=IntToStr(counter);
 
+    Label18.Caption:=FloatToStrF(eError,ffGeneral,6,10);
+    Label19.Caption:=IntToStr(counter);
+
     Label18.Visible:=true;
     Label19.Visible:=true;
-    Label20.Visible:=true;
     XInput.Visible:=true;
     VijHidden.Visible:=true;
     WjkHidden.Visible:=true;
